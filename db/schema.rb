@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_06_18_114832) do
 
   create_table "awarders", force: :cascade do |t|
     t.string "name"
+    t.integer "external_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,6 +36,8 @@ ActiveRecord::Schema.define(version: 2019_06_18_114832) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.string "description"
+    t.integer "external_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

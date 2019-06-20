@@ -9,7 +9,6 @@ class CreateBadges < ActiveRecord::Migration[6.0]
       t.references :awarder, foreign_key: true
       t.string :criteria
       
-
       t.timestamps
     end
   end

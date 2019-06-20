@@ -13,4 +13,5 @@ class Badge < ApplicationRecord
 
   validates :name, presence: true
   validates :criteria, presence: true
+  validates :external_id, uniqueness: true, presence: true
 end

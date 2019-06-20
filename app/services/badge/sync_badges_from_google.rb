@@ -25,17 +25,41 @@ class Badge
     def call
       download_spreadsheet_data
       add_to_database
+      OpenStruct.new(success?: true, errors: nil)
     end
 
     def download_spreadsheet_data
-      range = 'Badge Entry!A2:G'
-      @response = @service.get_spreadsheet_values(BADGES_SHEET_ID, range)
+      @categories = @service.get_spreadsheet_values(BADGES_SHEET_ID, 'Modules!A2:C')
+      @awarders = @service.get_spreadsheet_values(BADGES_SHEET_ID, 'Awarders!A2:B')
+      @badges = @service.get_spreadsheet_values(BADGES_SHEET_ID, 'Badges!A2:F')
     end
 
     def add_to_database
-      @response.values.each do |b|
-        Badge.first_or_initialize(external_id: b[0]) do |badge|
-          p badge
+      @categories.values.each do |c|
+        Category.where(external_id: c[0]).first_or_initialize do |category|
+          category.name = c[1]
+          category.description = c[2]
+          category.save!
+        end
+      end
+
+      @awarders.values.each do |a|
+        Awarder.where(external_id: a[0]).first_or_initialize do |awarder|          
+          awarder.name = a[1]
+          awarder.save!
+        end
+      end
+
+      @badges.values.each do |b|
+        Badge.where(external_id: b[0]).first_or_initialize do |badge|
+          badge.category = Category.where(name: b[1]).first
+          badge.name = b[2]
+          badge.awarder = Awarder.where(name: b[3]).first
+          # adjust to work with multiple badges
+          required_badges = Badge.unscoped.where(name: b[4]).first
+          badge.required_badges = [required_badges] if required_badges.present?
+          badge.criteria = b[5]
+          badge.save!
         end
       end
     end

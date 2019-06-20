@@ -1,0 +1,1147 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sheets.googleapis.com/v4/spreadsheets/1qNso27BVEdbzy1nsl5OkATnues5SvZhdXeqdt4M4M44/values/Modules!A2:C
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Google Sheets API Ruby Quickstart/0.0.0 google-api-ruby-client/0.30.2 Linux/4.15.0-51-generic
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 20 Jun 2019 12:43:17 GMT
+      Authorization:
+      - Bearer ya29.GlwtB3e2qkyV_HRsykJOHLpu0VlVpHOcarLGn7rCoYKrXQpaI5WEUGGiyb2Kho-Kb_1VRCZvi4eBDrnJ7Dsv7DFMQms7-RlG_Y61WTAH_Apz-fJCRSwFn8rR7Z2keQ
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Thu, 20 Jun 2019 12:43:17 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "range": "Modules!A2:C1000",
+          "majorDimension": "ROWS",
+          "values": [
+            [
+              "1",
+              "Charity",
+              "The Charity Honours Module allows you to gain recognition for organising, promoting or supporting charity projects and events.  This demonstrates your ability to be respectful, thoughtful, kind and supportive towards others in your local, national and international communities. The badges you can gain from this Honours module vary from organising and promoting an event, and taking part in an event or collection to make a difference. This module will enable you to have an impact on helping others through compassion and gratitude, those who may be less fortunate than you are or who need support or funding to support a better life.  The different badges provide a wide range of participation and leadership opportunities."
+            ],
+            [
+              "2",
+              "Representation",
+              "The Representation Module allows you to gain recognition for representing your academy, in both sporting and academic events. The badge demonstrates your ability to work independently and part of a team to reach a goal and will show that you have the skills that you will need to participate in the working world."
+            ],
+            [
+              "3",
+              "Attitudes to Learning",
+              "The Attitudes to Learning Module allows you to gain recognition for demonstrating those attitudes and attributes which contribute to your success in learning.  These badges demonstrate your belief that learning is important to you and that you are PROUD of your learning which are positive attributes for employers and colleges."
+            ],
+            [
+              "4",
+              "Personal Endeavour",
+              "The Personal Endeavour Module allows you to gain recognition for taking responsibility for your own learning and your future career.  The badges alow you to focus on a project of your own choosing or to work with careers education to start broadening your horizons."
+            ],
+            [
+              "5",
+              "Extended Learning",
+              "The Extended Learning Module allows you to gain recognition for extending your learning beyond the classroom and developing yourself as an independent learner. This Honours module recognises your commitment to your studies and your desire to improve both your knowledge and skills to support your success across your education. Within this module badges can be awarded for a variety of activities that complement your studies."
+            ],
+            [
+              "6",
+              "Trips and Visits",
+              "The Trips and Visits Module allows you to gain recognition for participating in trips and visits across all areas of the curriculum. This demonstrates your willingness to participate in events that widen your understanding of a subject. The badges you can gain from this module encompass all the different types of visits that you might participate in, ranging from subject specific day visits to international residentials. This badge is all about you as a student seeking out the exciting opportunities your academy has to offer."
+            ],
+            [
+              "7",
+              "After School Enrichment",
+              "The After School Enrichment Module allows you to gain recognition for attending and participating in any after school activity over the period of at least half a term.  These badges allow you to seek exciting opportunities outside of normal curriculum time."
+            ],
+            [
+              "8",
+              "Student Voice",
+              "The Student Voice Module allows you to gain recognition for extending your learning beyond the classroom and developing yourself as part of the student voice team. The badges you can gain from this Honours module vary from joining part of student voice, becoming a peer mentor, commiting as part of a student voice team or having the confidence to lead a team.  This module will enable you to have an impact on the whole life of the academy as well as guiding and helping your peers.  The different badges provide a wide range of particiaption and leadership opportunities."
+            ],
+            [
+              "9",
+              "Digital Literacy & ICT",
+              "Ben to do"
+            ],
+            [
+              "10",
+              "Emerging Issues",
+              "The Emerging Issues Honours Module allows you to consider an issue as an indiviual or part of a group, to raise awareness of an issue and to either recommend ways to take action or to put in place strategies to support alleviating the issue.  This demonstrates your ability to be thoughtful, to take action, be supportive and take action to make a difference. The badges you can gain from this Honours module vary from organising and promoting an event, participating in an event or debate to raise awareness of an issue, and taking part in a strategy and evaluating its successful impact.  This module will enable you to make a difference and have a positive impact on supporting a better and more sustainable future.  The different badges provide a wide range of participation and leadership opportunities."
+            ]
+          ]
+        }
+    http_version: 
+  recorded_at: Thu, 20 Jun 2019 12:43:17 GMT
+- request:
+    method: get
+    uri: https://sheets.googleapis.com/v4/spreadsheets/1qNso27BVEdbzy1nsl5OkATnues5SvZhdXeqdt4M4M44/values/Awarders!A2:B
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Google Sheets API Ruby Quickstart/0.0.0 google-api-ruby-client/0.30.2 Linux/4.15.0-51-generic
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 20 Jun 2019 12:43:17 GMT
+      Authorization:
+      - Bearer ya29.GlwtB3e2qkyV_HRsykJOHLpu0VlVpHOcarLGn7rCoYKrXQpaI5WEUGGiyb2Kho-Kb_1VRCZvi4eBDrnJ7Dsv7DFMQms7-RlG_Y61WTAH_Apz-fJCRSwFn8rR7Z2keQ
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Thu, 20 Jun 2019 12:43:18 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "range": "Awarders!A2:B998",
+          "majorDimension": "ROWS",
+          "values": [
+            [
+              "1",
+              "PE teacher"
+            ],
+            [
+              "2",
+              "Admin staff"
+            ],
+            [
+              "3",
+              "Maths teacher"
+            ],
+            [
+              "4",
+              "Subject teacher"
+            ],
+            [
+              "5",
+              "MFL teacher"
+            ],
+            [
+              "6",
+              "Librarian"
+            ],
+            [
+              "7",
+              "Trip leader"
+            ],
+            [
+              "8",
+              "Enrichment leader"
+            ],
+            [
+              "9",
+              "Learning manager"
+            ],
+            [
+              "10",
+              "ICT teacher"
+            ],
+            [
+              "11",
+              "VMG tutor"
+            ],
+            [
+              "12",
+              "Peer mentor lead"
+            ],
+            [
+              "13",
+              "Staff supporter"
+            ],
+            [
+              "14",
+              "Principal"
+            ]
+          ]
+        }
+    http_version: 
+  recorded_at: Thu, 20 Jun 2019 12:43:18 GMT
+- request:
+    method: get
+    uri: https://sheets.googleapis.com/v4/spreadsheets/1qNso27BVEdbzy1nsl5OkATnues5SvZhdXeqdt4M4M44/values/Badges!A2:F
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Google Sheets API Ruby Quickstart/0.0.0 google-api-ruby-client/0.30.2 Linux/4.15.0-51-generic
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 20 Jun 2019 12:43:18 GMT
+      Authorization:
+      - Bearer ya29.GlwtB3e2qkyV_HRsykJOHLpu0VlVpHOcarLGn7rCoYKrXQpaI5WEUGGiyb2Kho-Kb_1VRCZvi4eBDrnJ7Dsv7DFMQms7-RlG_Y61WTAH_Apz-fJCRSwFn8rR7Z2keQ
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Thu, 20 Jun 2019 12:43:18 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "range": "Badges!A2:F998",
+          "majorDimension": "ROWS",
+          "values": [
+            [
+              "1",
+              "Representation",
+              "Sports Superstar - Regional",
+              "PE teacher",
+              "",
+              "Represent the academy at the regional level for a sporting event"
+            ],
+            [
+              "2",
+              "Representation",
+              "Sports Superstar",
+              "PE teacher",
+              "",
+              "Represent the academy in a sporting fixture."
+            ],
+            [
+              "3",
+              "Representation",
+              "Sports Superstar - Part of the Team",
+              "PE teacher",
+              "",
+              "Represent the academy in a sporting fixture as part of the academy team."
+            ],
+            [
+              "4",
+              "Representation",
+              "Sports Superstar - National",
+              "PE teacher",
+              "",
+              "Represent the academy at the national level for a sporting event"
+            ],
+            [
+              "5",
+              "Attitudes to Learning",
+              "Year 7",
+              "Admin staff",
+              "",
+              "Welcome to Outwood!"
+            ],
+            [
+              "6",
+              "Attitudes to Learning",
+              "Year 8",
+              "Admin staff",
+              "",
+              "Reach year 8 in Outwood"
+            ],
+            [
+              "7",
+              "Attitudes to Learning",
+              "Year 9",
+              "Admin staff",
+              "",
+              "Reach year 9 in Outwood"
+            ],
+            [
+              "8",
+              "Attitudes to Learning",
+              "Year 10",
+              "Admin staff",
+              "",
+              "Reach year 10 in Outwood"
+            ],
+            [
+              "9",
+              "Attitudes to Learning",
+              "Year 11",
+              "Admin staff",
+              "",
+              "Reach year 11 in Outwood"
+            ],
+            [
+              "10",
+              "Representation",
+              "Graduation",
+              "Admin staff",
+              "Year 8",
+              "Graduate to your GCSE studies"
+            ],
+            [
+              "11",
+              "Extended Learning",
+              "Hegarty Hero",
+              "Maths teacher",
+              "",
+              "20 hours extra learning in hegarty maths"
+            ],
+            [
+              "12",
+              "Extended Learning",
+              "Hegarty Hero Level 2",
+              "Maths teacher",
+              "Hegarty Hero",
+              "40 hours extra learning"
+            ],
+            [
+              "13",
+              "Extended Learning",
+              "Educake Excellence ",
+              "Subject teacher",
+              "",
+              "20 hours extra learning"
+            ],
+            [
+              "14",
+              "Extended Learning",
+              "Seneca",
+              "Subject teacher",
+              "",
+              "20 hours extra learning"
+            ],
+            [
+              "15",
+              "Extended Learning",
+              "All-In",
+              "MFL teacher",
+              "",
+              "20 hours extra learning"
+            ],
+            [
+              "16",
+              "Extended Learning",
+              "Superstar Accelerated Reader ",
+              "Librarian",
+              "",
+              "Top 5% for most words read in year group"
+            ],
+            [
+              "17",
+              "Extended Learning",
+              "Subject Reading",
+              "Subject teacher",
+              "",
+              "Completion of subject reading materials set."
+            ],
+            [
+              "18",
+              "Extended Learning",
+              "Subject Power-up Reading",
+              "Subject teacher",
+              "Subject Reading",
+              "Submission of a 1000 word essay."
+            ],
+            [
+              "19",
+              "Extended Learning",
+              "Subject core knowledge quizzing",
+              "Subject teacher",
+              "",
+              "Complete subject knowledge quizzes and recall key information."
+            ],
+            [
+              "20",
+              "Extended Learning",
+              "Subject Terminology Vocabulary Boosters",
+              "Subject teacher",
+              "",
+              "Know the definition and be able to use the words in context."
+            ],
+            [
+              "21",
+              "Extended Learning",
+              "Subject Mentee",
+              "Subject teacher",
+              "",
+              "Work weekly with a subject mentor over 1 term."
+            ],
+            [
+              "22",
+              "Extended Learning",
+              "Subject Mentor",
+              "Subject teacher",
+              "",
+              "Work weekly with a subject mentee over 1 term."
+            ],
+            [
+              "23",
+              "Trips and Visits",
+              "Savy Scientist",
+              "Trip leader",
+              "",
+              "Participate in a STEM based day trip"
+            ],
+            [
+              "24",
+              "Trips and Visits",
+              "Honorary Historian",
+              "Trip leader",
+              "",
+              "Participate in a History based day trip"
+            ],
+            [
+              "25",
+              "Trips and Visits",
+              "Genius Geographer",
+              "Trip leader",
+              "",
+              "Participate in a Geography based day trip"
+            ],
+            [
+              "26",
+              "Trips and Visits",
+              "Learned Linguist ",
+              "Trip leader",
+              "",
+              "Participate in an English based day trip"
+            ],
+            [
+              "27",
+              "Trips and Visits",
+              "Marvellous Musician",
+              "Trip leader",
+              "",
+              "Participate in a Music based day trip"
+            ],
+            [
+              "28",
+              "Trips and Visits",
+              "Daring Designer",
+              "Trip leader",
+              "",
+              "Participate in an DT/Art based day trip"
+            ],
+            [
+              "29",
+              "Trips and Visits",
+              "Amazing Athlete",
+              "Trip leader",
+              "",
+              "Participate in a PE based day trip"
+            ],
+            [
+              "30",
+              "After School Enrichment",
+              "After school enrichment level 1",
+              "Enrichment leader",
+              "",
+              "Attend 1 after school enrichment every week for half a term."
+            ],
+            [
+              "31",
+              "After School Enrichment",
+              "After school enrichment level 2",
+              "Enrichment leader",
+              "After school enrichment level 1",
+              "Attend 2 after school enrichments every week for half a term."
+            ],
+            [
+              "32",
+              "After School Enrichment",
+              "After school enrichment level 3",
+              "Enrichment leader",
+              "After school enrichment level 2",
+              "Attend 3 after school enrichments every week for half a term."
+            ],
+            [
+              "33",
+              "After School Enrichment",
+              "After school enrichment level 4",
+              "Enrichment leader",
+              "After school enrichment level 3",
+              "Attend 4 after school enrichments every week for half a term."
+            ],
+            [
+              "34",
+              "Student Voice",
+              "Let's Investigate!",
+              "Learning manager",
+              "",
+              "Join a student voice committee and attend for 1 half term"
+            ],
+            [
+              "35",
+              "Student Voice",
+              "Collaborative Committment",
+              "Learning manager",
+              "",
+              "Join a student voice committee and attend for 1 full term"
+            ],
+            [
+              "36",
+              "Student Voice",
+              "Dynamic Dedication",
+              "Learning manager",
+              "",
+              "Show long term dedication to a student voice committee and demonstrate the impact this has had"
+            ],
+            [
+              "37",
+              "Student Voice",
+              "Campaign Champion",
+              "Learning manager",
+              "",
+              "Actively support a student campaign within your academy"
+            ],
+            [
+              "38",
+              "Student Voice",
+              "I am a Leader",
+              "Learning manager",
+              "",
+              "Lead a student campaign within your academy"
+            ],
+            [
+              "39",
+              "Student Voice",
+              "Successful Support",
+              "Learning manager",
+              "",
+              "Become a peer mentor and demonstrate the impact you have had"
+            ],
+            [
+              "40",
+              "Student Voice",
+              "VMG Hero",
+              "Learning manager",
+              "",
+              "Present to your VMG on behalf of student voice"
+            ],
+            [
+              "41",
+              "Student Voice",
+              "SLT Hero",
+              "Learning manager",
+              "",
+              "Present to SLT on behalf of student voice"
+            ],
+            [
+              "42",
+              "Student Voice",
+              "Assembly Adventure",
+              "Learning manager",
+              "",
+              "Deliver in assembly on behalf of student voice"
+            ],
+            [
+              "43",
+              "Student Voice",
+              "Student Voice Superstar!",
+              "Learning manager",
+              "",
+              "Present to the whole staff on behalf of student voice"
+            ],
+            [
+              "44",
+              "Digital Literacy & ICT",
+              "Code Ninja",
+              "ICT teacher",
+              "",
+              "Complete the hour of code and gain your certificate"
+            ],
+            [
+              "45",
+              "Digital Literacy & ICT",
+              "Video Editor",
+              "Subject teacher",
+              "",
+              "Create a educational video for a school project"
+            ],
+            [
+              "46",
+              "Digital Literacy & ICT",
+              "Digital Leader",
+              "ICT teacher",
+              "",
+              "Complete the Applied Digital Skills in your academy to become a digital leader, sign up here: https://applieddigitalskills.withgoogle.com/s/en/home"
+            ],
+            [
+              "47",
+              "Digital Literacy & ICT",
+              "Tour Guide",
+              "VMG tutor",
+              "",
+              "Create a virtual tour of a place you have been to educate others using: https://tourbuilder.withgoogle.com/"
+            ],
+            [
+              "48",
+              "Digital Literacy & ICT",
+              "Searching Success",
+              "VMG tutor",
+              "",
+              "Demonstrate your google searching ability by scoring over 1900 points using http://www.agoogleaday.com/ (screenshot evidence required)"
+            ],
+            [
+              "49",
+              "Digital Literacy & ICT",
+              "Referencing Researcher",
+              "Subject teacher",
+              "",
+              "Conduct research in a subject and use the referencing facility in Google Docs to reference correctly."
+            ],
+            [
+              "50",
+              "Digital Literacy & ICT",
+              "Quiz Master",
+              "Subject teacher",
+              "",
+              "Create a kahoot quiz for a subject and show your teacher. If they use it in a lesson you can gain this badge."
+            ],
+            [
+              "51",
+              "Digital Literacy & ICT",
+              "eSafety Expert",
+              "ICT teacher",
+              "",
+              "Create an infographic promoting eSafety that can be used within the academy, using the website https://www.canva.com/"
+            ],
+            [
+              "52",
+              "Trips and Visits",
+              "Outwood Bound",
+              "Learning manager",
+              "",
+              "Go on the year 8 outwood bound residential."
+            ],
+            [
+              "53",
+              "Trips and Visits",
+              "Residential Adventure",
+              "Trip leader",
+              "",
+              "Go on an overnight visit (apart from outwood bound Y8)."
+            ],
+            [
+              "54",
+              "Trips and Visits",
+              "Higher Education Pathfinder",
+              "Trip leader",
+              "",
+              "Go on a trip to a university to look at the courses available."
+            ],
+            [
+              "55",
+              "Trips and Visits",
+              "Further Education Pathfinder ",
+              "Trip leader",
+              "",
+              "Go on a trip to a college to experience the courses available."
+            ],
+            [
+              "56",
+              "Trips and Visits",
+              "Far and Away Adventure ",
+              "Trip leader",
+              "",
+              "Go on a trip to another country."
+            ],
+            [
+              "57",
+              "Trips and Visits",
+              "Workplace Wonderer Y7",
+              "Trip leader",
+              "Year 7",
+              "Have a meaingful encounter with an employer and place of employment/workplace in year 7."
+            ],
+            [
+              "58",
+              "Trips and Visits",
+              "Workplace Wondered Y8",
+              "Trip leader",
+              "Year 8",
+              "Have a meaingful encounter with an employer and place of employment/workplace in year 8."
+            ],
+            [
+              "59",
+              "Trips and Visits",
+              "Workplace Wonderer Y9",
+              "Trip leader",
+              "Year 9",
+              "Have a meaingful encounter with an employer and place of employment/workplace in year 9."
+            ],
+            [
+              "60",
+              "Trips and Visits",
+              "Workplace Wondered Y10",
+              "Trip leader",
+              "Year 10",
+              "Have a meaingful encounter with an employer and place of employment/workplace in year 10."
+            ],
+            [
+              "61",
+              "Trips and Visits",
+              "Workplace Wonderer Y11",
+              "Trip leader",
+              "Year 11",
+              "Have a meaingful encounter with an employer and place of employment/workplace in year 11."
+            ],
+            [
+              "62",
+              "Trips and Visits",
+              "Cultural Capital Connoisseur",
+              "Trip leader",
+              "",
+              "Go on a trip which improves your cultural captial (i.e. a museum, the theatre, a famous landmark)."
+            ],
+            [
+              "63",
+              "Representation",
+              "Outwood Games",
+              "PE teacher",
+              "",
+              "Represent the academy in the Outwood games."
+            ],
+            [
+              "64",
+              "Representation",
+              "Amazing Academic - Individual Competition",
+              "Trip leader",
+              "",
+              "Represent the academy in an academic event as an individual."
+            ],
+            [
+              "65",
+              "Representation",
+              "Amazing Academic - Team Competition",
+              "Trip leader",
+              "",
+              "Represent the academy in an academic event as part of a team."
+            ],
+            [
+              "66",
+              "Representation",
+              "Proud Presenter ",
+              "Learning manager",
+              "",
+              "Present an idea to a large audience (i.e. Big bang fair, an assembly)"
+            ],
+            [
+              "67",
+              "Attitudes to Learning",
+              "Attendance ",
+              "Learning manager",
+              "",
+              "End of year attendance above 96% (or reasonable adjustments made at academy discretion.)"
+            ],
+            [
+              "68",
+              "Attitudes to Learning",
+              "Attendance perfection",
+              "Learning manager",
+              "",
+              "End of year attendance at 100% "
+            ],
+            [
+              "69",
+              "Attitudes to Learning",
+              "Punctuality Paragon",
+              "Learning manager",
+              "",
+              "No late marks in a half term"
+            ],
+            [
+              "70",
+              "Attitudes to Learning",
+              "Effort excellence",
+              "Learning manager",
+              "",
+              "All E1-E3 in a praising stars cycle"
+            ],
+            [
+              "71",
+              "Attitudes to Learning",
+              "Academy Support Ambassador",
+              "Peer mentor lead",
+              "",
+              "Support students in the academy e.g student librarian, PROUD ambassador, leader of learning, peer mentor"
+            ],
+            [
+              "72",
+              "Charity",
+              "Local charity organiser - Organising and Promoting an event for a Local Charity",
+              "Staff supporter",
+              "",
+              "Staff supporting you to sign off your positive involvement in organising and promoting the event"
+            ],
+            [
+              "73",
+              "Charity",
+              "National charity organiser - Organising and Promoting an event for a National Charity",
+              "Staff supporter",
+              "",
+              "Staff supporting you to sign off your positive involvement in organising and promoting the event"
+            ],
+            [
+              "74",
+              "Charity",
+              "International charity organiser - Organising and Promoting an event for an International Charity",
+              "Staff supporter",
+              "",
+              "Staff supporting you to sign off your positive involvement in organising and promoting the event"
+            ],
+            [
+              "75",
+              "Charity",
+              "Local charity fundraiser - Taking part and raising funds for a Local Charity",
+              "Staff supporter",
+              "",
+              "Staff supporting you to sign off your positive involvement in taking part in the local charity event"
+            ],
+            [
+              "76",
+              "Charity",
+              "Local charity fundraiser - Taking part and raising funds for a National Charity",
+              "Staff supporter",
+              "",
+              "Staff supporting you to sign off your positive involvement in taking part in the national charity event"
+            ],
+            [
+              "77",
+              "Charity",
+              "Local charity fundraiser - Taking part and raising funds for an International Charity",
+              "Staff supporter",
+              "",
+              "Staff supporting you to sign off your positive involvement in taking part in the international charity event"
+            ],
+            [
+              "78",
+              "Charity",
+              "Anti-bullying Ambassador - Level 1",
+              "Learning manager",
+              "",
+              "Completion of the anti-bullying ambassador training - wear the badge on your blazer with pride"
+            ],
+            [
+              "79",
+              "Charity",
+              "Anti-bullying Ambassador - Level 2",
+              "Learning manager",
+              "Anti-bullying Ambassador - Level 1",
+              "Support students who feel they are being bullied by listening and liaising with adults in the academy who can help"
+            ],
+            [
+              "80",
+              "Charity",
+              "Anti-bullying Ambassador - Trainer",
+              "Learning manager",
+              "Anti-bullying Ambassador - Level 2",
+              "Support the training of others to support the anti-bullying ambassador team"
+            ],
+            [
+              "81",
+              "Charity",
+              "Reading Buddy",
+              "Librarian",
+              "",
+              "Support the reading of other students by becoming a regular reading buddy"
+            ],
+            [
+              "82",
+              "Charity",
+              "Reading Buddy Trainer",
+              "Librarian",
+              "Reading Buddy",
+              "Support the training of others to become a reading buddy"
+            ],
+            [
+              "83",
+              "Charity",
+              "Peer Mentor",
+              "Learning manager",
+              "",
+              "Support a student, new or existing, in working through an issue or settling into something new"
+            ],
+            [
+              "84",
+              "Charity",
+              "Kindness award",
+              "VMG tutor",
+              "",
+              "Receive at least 3 nominations in one year for a random act of kindness"
+            ],
+            [
+              "85",
+              "Charity",
+              "Charity Work External Level 1",
+              "VMG tutor",
+              "",
+              "Bring proof of a one off piece of charity work for a charitable organisation you have supported outside of the academy"
+            ],
+            [
+              "86",
+              "Charity",
+              "Charity Work External Level 2",
+              "VMG tutor",
+              "Charity Work External Level 1",
+              "Bring proof to your VMG tutor that you have worked outside of the academy for a charitable organisation multiple times in a single year."
+            ],
+            [
+              "87",
+              "Charity",
+              "OGAT Recognition for Awesomeness Award - Yr7",
+              "Principal",
+              "",
+              "Receive the recognition award for being the Yr 7 student for being safe, respectful and responsible through kindness, compassion and gratitude"
+            ],
+            [
+              "88",
+              "Charity",
+              "OGAT Recognition for Awesomeness Award - Yr8",
+              "Principal",
+              "",
+              "Receive the recognition award for being the Yr 8 student for being safe, respectful and responsible through kindness, compassion and gratitude"
+            ],
+            [
+              "89",
+              "Charity",
+              "OGAT Recognition for Awesomeness Award - Yr9",
+              "Principal",
+              "",
+              "Receive the recognition award for being the Yr 9 student for being safe, respectful and responsible through kindness, compassion and gratitude"
+            ],
+            [
+              "90",
+              "Charity",
+              "OGAT Recognition for Awesomeness Award - Yr10",
+              "Principal",
+              "",
+              "Receive the recognition award for being the Yr 10 student for being safe, respectful and responsible through kindness, compassion and gratitude"
+            ],
+            [
+              "91",
+              "Charity",
+              "OGAT Recognition for Awesomeness Award - Yr11",
+              "Principal",
+              "",
+              "Receive the recognition award for being the Yr 11 student for being safe, respectful and responsible through kindness, compassion and gratitude"
+            ],
+            [
+              "92",
+              "Emerging Issues",
+              "Waste Warrior - Level 1 Academy",
+              "VMG tutor",
+              "",
+              "Support a strategy to reduce waste and improve sustainability in your academy"
+            ],
+            [
+              "93",
+              "Emerging Issues",
+              "Waste Warrior - Level 2 Local Community",
+              "VMG tutor",
+              "",
+              "Support a strategy to reduce waste and improve sustainability in your local community"
+            ],
+            [
+              "94",
+              "Emerging Issues",
+              "Waste Warrior - Level 3 National",
+              "VMG tutor",
+              "",
+              "Support a strategy to reduce waste and improve sustainability on a national level"
+            ],
+            [
+              "95",
+              "Emerging Issues",
+              "Waste Warrior - Level 4 International",
+              "VMG tutor",
+              "",
+              "Support a strategy to reduce waste and improve sustainability on an international level"
+            ],
+            [
+              "96",
+              "Emerging Issues",
+              "Mobile Technology Amnesty",
+              "VMG tutor",
+              "",
+              "Take an active part in a strategy to support encouraging a mobile technology amnesty"
+            ],
+            [
+              "97",
+              "Emerging Issues",
+              "Mindfulness",
+              "VMG tutor",
+              "",
+              "Support a mindfulness strategy aiming to support positive attitudes"
+            ],
+            [
+              "98",
+              "Emerging Issues",
+              "British values advocate for democracy",
+              "VMG tutor",
+              "",
+              "Support a strategy to promote democracy"
+            ],
+            [
+              "99",
+              "Emerging Issues",
+              "British values advocate for the rule of law",
+              "VMG tutor",
+              "",
+              "Support a strategy to promote the rule of law"
+            ],
+            [
+              "100",
+              "Emerging Issues",
+              "British values advocate for individual liberty",
+              "VMG tutor",
+              "",
+              "Support a strategy to promote individual liberty"
+            ],
+            [
+              "101",
+              "Emerging Issues",
+              "British values advocate for mutual respect and tolerance",
+              "VMG tutor",
+              "",
+              "Support a strategy to promote mutual respect and tolerance"
+            ],
+            [
+              "102",
+              "Emerging Issues",
+              "Being Safe",
+              "Learning manager",
+              "",
+              "Support a strategy to encourage students to be safe in the world.  For example: knife crime, county lines, alcohol, smoking, drugs etc "
+            ],
+            [
+              "103",
+              "Personal Endeavour",
+              "Amazing Ambassador",
+              "VMG tutor",
+              "",
+              "Represent the academy at an open event for prospective students and their parents. "
+            ],
+            [
+              "104",
+              "Personal Endeavour",
+              "Endeavour award",
+              "VMG tutor",
+              "",
+              "A personal endeavour/learning project undertaken at home or within the academy seen and signed off by VMG tutor"
+            ],
+            [
+              "105",
+              "Personal Endeavour",
+              "Careers Captain",
+              "Learning manager",
+              "",
+              "Take part in careers research such as a mock interview or meet with industry "
+            ],
+            [
+              "106",
+              "Personal Endeavour",
+              "Education explorer",
+              "Learning manager",
+              "",
+              "Attend a college open day"
+            ],
+            [
+              "107",
+              "Personal Endeavour",
+              "Higher Education Explorer",
+              "Learning manager",
+              "",
+              "Attend an event at a university"
+            ],
+            [
+              "108",
+              "Personal Endeavour",
+              "Employee Award",
+              "Learning manager",
+              "",
+              "Participate in work experience"
+            ]
+          ]
+        }
+    http_version: 
+  recorded_at: Thu, 20 Jun 2019 12:43:18 GMT
+recorded_with: VCR 5.0.0
