@@ -1,6 +1,59 @@
 ---
 http_interactions:
 - request:
+    method: post
+    uri: https://oauth2.googleapis.com/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=refresh_token&refresh_token=1%2F36Oo86wBHVhpVy7hBSIfS34xSqQjzWhTgXI8MxAf5UQ&client_id=932922408961-a5uicmhd6i5jmp4625rm3usbbn8par4q.apps.googleusercontent.com&client_secret=KPbEWmsjNQ2URws76JmI49ye
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Thu, 20 Jun 2019 14:14:06 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "access_token": "ya29.GlwtB-8I02NLCmi0AP_uA6t6tW4YQA1lAyQxSBUocalt2JZLGmddmQdKNXn2viudVV_vtOTUd9WWhpQ4HkSQ4iWtpBlfLiaZyebsQFA9GDl3oQ_j7J-4uv0XHndEXQ",
+          "expires_in": 3600,
+          "scope": "https://www.googleapis.com/auth/spreadsheets.readonly",
+          "token_type": "Bearer"
+        }
+    http_version: 
+  recorded_at: Thu, 20 Jun 2019 14:14:06 GMT
+- request:
     method: get
     uri: https://sheets.googleapis.com/v4/spreadsheets/1qNso27BVEdbzy1nsl5OkATnues5SvZhdXeqdt4M4M44/values/Modules!A2:C
     body:
@@ -15,9 +68,9 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Thu, 20 Jun 2019 12:43:13 GMT
+      - Thu, 20 Jun 2019 14:14:06 GMT
       Authorization:
-      - Bearer ya29.GlwtB3e2qkyV_HRsykJOHLpu0VlVpHOcarLGn7rCoYKrXQpaI5WEUGGiyb2Kho-Kb_1VRCZvi4eBDrnJ7Dsv7DFMQms7-RlG_Y61WTAH_Apz-fJCRSwFn8rR7Z2keQ
+      - Bearer ya29.GlwtB-8I02NLCmi0AP_uA6t6tW4YQA1lAyQxSBUocalt2JZLGmddmQdKNXn2viudVV_vtOTUd9WWhpQ4HkSQ4iWtpBlfLiaZyebsQFA9GDl3oQ_j7J-4uv0XHndEXQ
       Content-Type:
       - application/x-www-form-urlencoded
   response:
@@ -34,7 +87,7 @@ http_interactions:
       Content-Encoding:
       - gzip
       Date:
-      - Thu, 20 Jun 2019 12:43:13 GMT
+      - Thu, 20 Jun 2019 14:14:07 GMT
       Server:
       - ESF
       Cache-Control:
@@ -107,7 +160,7 @@ http_interactions:
           ]
         }
     http_version: 
-  recorded_at: Thu, 20 Jun 2019 12:43:13 GMT
+  recorded_at: Thu, 20 Jun 2019 14:14:07 GMT
 - request:
     method: get
     uri: https://sheets.googleapis.com/v4/spreadsheets/1qNso27BVEdbzy1nsl5OkATnues5SvZhdXeqdt4M4M44/values/Awarders!A2:B
@@ -123,9 +176,9 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Thu, 20 Jun 2019 12:43:13 GMT
+      - Thu, 20 Jun 2019 14:14:07 GMT
       Authorization:
-      - Bearer ya29.GlwtB3e2qkyV_HRsykJOHLpu0VlVpHOcarLGn7rCoYKrXQpaI5WEUGGiyb2Kho-Kb_1VRCZvi4eBDrnJ7Dsv7DFMQms7-RlG_Y61WTAH_Apz-fJCRSwFn8rR7Z2keQ
+      - Bearer ya29.GlwtB-8I02NLCmi0AP_uA6t6tW4YQA1lAyQxSBUocalt2JZLGmddmQdKNXn2viudVV_vtOTUd9WWhpQ4HkSQ4iWtpBlfLiaZyebsQFA9GDl3oQ_j7J-4uv0XHndEXQ
       Content-Type:
       - application/x-www-form-urlencoded
   response:
@@ -142,7 +195,7 @@ http_interactions:
       Content-Encoding:
       - gzip
       Date:
-      - Thu, 20 Jun 2019 12:43:13 GMT
+      - Thu, 20 Jun 2019 14:14:07 GMT
       Server:
       - ESF
       Cache-Control:
@@ -221,7 +274,7 @@ http_interactions:
           ]
         }
     http_version: 
-  recorded_at: Thu, 20 Jun 2019 12:43:14 GMT
+  recorded_at: Thu, 20 Jun 2019 14:14:07 GMT
 - request:
     method: get
     uri: https://sheets.googleapis.com/v4/spreadsheets/1qNso27BVEdbzy1nsl5OkATnues5SvZhdXeqdt4M4M44/values/Badges!A2:F
@@ -237,9 +290,9 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Thu, 20 Jun 2019 12:43:14 GMT
+      - Thu, 20 Jun 2019 14:14:07 GMT
       Authorization:
-      - Bearer ya29.GlwtB3e2qkyV_HRsykJOHLpu0VlVpHOcarLGn7rCoYKrXQpaI5WEUGGiyb2Kho-Kb_1VRCZvi4eBDrnJ7Dsv7DFMQms7-RlG_Y61WTAH_Apz-fJCRSwFn8rR7Z2keQ
+      - Bearer ya29.GlwtB-8I02NLCmi0AP_uA6t6tW4YQA1lAyQxSBUocalt2JZLGmddmQdKNXn2viudVV_vtOTUd9WWhpQ4HkSQ4iWtpBlfLiaZyebsQFA9GDl3oQ_j7J-4uv0XHndEXQ
       Content-Type:
       - application/x-www-form-urlencoded
   response:
@@ -256,7 +309,7 @@ http_interactions:
       Content-Encoding:
       - gzip
       Date:
-      - Thu, 20 Jun 2019 12:43:14 GMT
+      - Thu, 20 Jun 2019 14:14:08 GMT
       Server:
       - ESF
       Cache-Control:
@@ -1143,5 +1196,5 @@ http_interactions:
           ]
         }
     http_version: 
-  recorded_at: Thu, 20 Jun 2019 12:43:14 GMT
+  recorded_at: Thu, 20 Jun 2019 14:14:08 GMT
 recorded_with: VCR 5.0.0

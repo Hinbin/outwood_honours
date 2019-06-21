@@ -1,0 +1,9 @@
+p#notice = notice
+.container
+  .col
+    h3.display-4.text-center = @badge.name
+    .row
+      =random_image(@badge)
+    p.text-center = "Awarded by #{@badge.awarder.name}"
+
+=link_to 'Back', badges_path

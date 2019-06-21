@@ -1,0 +1,17 @@
+p#notice = notice
+.container
+  .col
+    .row
+      h1.display-3 Badges
+    .row
+      
+    .card-columns
+      -@badges.shuffle.each do |badge|
+        =link_to badge do
+          .card.text-dark
+            .card-header
+              =random_image(badge)
+              h4.text-center = badge.name
+            .card-body
+              p.text-center = badge.criteria
+              

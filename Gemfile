@@ -83,3 +83,15 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # To get badge information
 gem 'google-api-client', '~> 0.11'
+
+# Slim for clean HTML
+gem 'slim'
+
+# Pretty things!
+# Bootstrap and JQuery for Bootstrap!
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'font-awesome-sass'
+
+#Required for rails 6.1 (recommeneded 1.2)
+gem 'image_processing'
