@@ -6,8 +6,10 @@ RSpec.describe 'badges/index', type: :view do
 
   let(:badge_one) { create(:badge) }
   let(:badge_two) { create(:badge) }
+  let(:student) { create(:user) }
 
   before(:each) do
+    sign_in student
     assign(:badges, [
              badge_one,
              badge_two
@@ -16,7 +18,7 @@ RSpec.describe 'badges/index', type: :view do
   end
 
   it 'shows all badges currently avaiable' do
-    expect(rendered).to match(badge_one.criteria)
+    expect(rendered).to match(badge_one.name)
   end
 
   it 'shows badge icons' do

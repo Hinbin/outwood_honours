@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_114832) do
+ActiveRecord::Schema.define(version: 2019_06_21_075311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,22 @@ ActiveRecord::Schema.define(version: 2019_06_18_114832) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["badge_id", "required_badge_id"], name: "index_required_badges_on_badge_id_and_required_badge_id", unique: true
     t.index ["required_badge_id", "badge_id"], name: "index_required_badges_on_required_badge_id_and_badge_id", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.datetime "remember_created_at"
+    t.string "provider"
+    t.string "uid"
+    t.string "family_name"
+    t.string "given_name"
+    t.integer "role"
+    t.boolean "active"
+    t.string "school"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "badges", "awarders"

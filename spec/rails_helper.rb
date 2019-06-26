@@ -18,10 +18,8 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.ignore_localhost = true # allows oAuth testing
   config.configure_rspec_metadata!
-  config.ignore_hosts 'chromedriver.storage.googleapis.com'
+  config.ignore_hosts 'chromedriver.storage.googleapis.com', 'github.com'
 end
-
-
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -79,17 +77,36 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
 
+  # Required to use database cleaner
+  # or feature testing will not work
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
   end
 
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
+  config.before do
+    DatabaseCleaner.strategy = :transaction
   end
+
+  config.before(:each, js: true) do
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.before do
+    DatabaseCleaner.start
+  end
+
+  config.append_after do
+    DatabaseCleaner.clean
+  end
+
+  config.include SessionHelpers, type: :feature
+
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include Devise::Test::ControllerHelpers, type: :view
 end
+
+OmniAuth.config.test_mode = true
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

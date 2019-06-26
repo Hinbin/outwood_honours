@@ -1,10 +1,10 @@
-p#notice = notice
 .container
   .col
+    p.text-right = current_user.email
     .row
       h1.display-3 Badges
-    .row
-      
+      p = link_to 'Log Out', destroy_user_session_path, method: :delete
+    .row      
     .card-columns
       -@badges.shuffle.each do |badge|
         =link_to badge do

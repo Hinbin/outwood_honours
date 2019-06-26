@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-RSpec.describe Badge::SyncBadgesFromGoogle, :vcr do
+RSpec.describe Badge::SyncBadgesWithGoogle, :vcr do
   let(:representation_module) { Category.where(name: 'Representation').first }
   let(:pe_awarder) { Awarder.where(name: 'PE teacher').first }
   let(:first_badge) { Badge.where(external_id: 1).first }
   let(:first_awarder) { Awarder.where(external_id: 1).first }
 
-  context 'when syncing awarder data from Google' do
+  context 'when syncing awarder data from Google', :focus, vcr: :all do
     it 'sets the awarder name correctly' do
       described_class.new.call
       expect(first_awarder.name).to eq('PE teacher')

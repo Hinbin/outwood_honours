@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class BadgesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_badge, only: %i[show]
 
   # GET /badges
@@ -11,9 +12,7 @@ class BadgesController < ApplicationController
 
   # GET /badges/1
   # GET /badges/1.json
-  def show
-    
-  end
+  def show; end
 
   private
 

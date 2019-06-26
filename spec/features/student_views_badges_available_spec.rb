@@ -7,8 +7,5 @@ RSpec.describe 'Student views badges available' do
     badge
   end
  
-  it 'filters badges by category' do
-    select badge.category.name, from: 'Select Module'
-    expect(rendered).to contain(badge.description)
-  end
+  it 'filters badges by category'
 end

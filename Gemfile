@@ -90,8 +90,17 @@ gem 'slim'
 # Pretty things!
 # Bootstrap and JQuery for Bootstrap!
 gem 'bootstrap'
-gem 'jquery-rails'
 gem 'font-awesome-sass'
+gem 'jquery-rails'
 
-#Required for rails 6.1 (recommeneded 1.2)
+# Required for rails 6.1 (recommeneded 1.2)
 gem 'image_processing'
+
+# User management gems
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'pundit'
+
+# High Voltage for static web pages (login screen)
+gem 'high_voltage', '~> 3.1'
