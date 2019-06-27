@@ -1,0 +1,134 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.googleapis.com/oauth2/v4/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJvdXR3b29kLWhvbm91cnMtc3luY0BvdXR3b29kLWhvbm91cnMuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJhdWQiOiJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9vYXV0aDIvdjQvdG9rZW4iLCJleHAiOjE1NjE2NDg0NDUsImlhdCI6MTU2MTY0ODMyNSwic2NvcGUiOiJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL3NwcmVhZHNoZWV0cy5yZWFkb25seSJ9.gGbIwIipomBDELQllJ5CFtc585YmB2AcgkV4EuubMGLNVjESi_90LlYJM3ieODGSyO61mSzbs1heop35TnB_P7INv217NgwFQF882PTkj0y77giFjZaLGT5hF9DFyMWHUD4pD-VG1KW1BoZMBGEWlIGeUQtWxwqP_xYL54sbBFR8shc_wO2fxWIzCjbn0iSiIhisG4klPxcX3M5k25mihvcQ1Fd8T28M8Cw66J5HgDc9FQrQsEQouL9h1wrjikaSxKeuJE1QN8eQWLhrOGCv-7eGvgfm8yv7PUNE4KZAsHc0RDdxXAjsSQc8Az1OQiQVFnbeovMGI2ERQ-R7U-vljA
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Thu, 27 Jun 2019 15:13:05 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "access_token": "ya29.c.Elo0B1b1sX9NIEHgP1sQRAmFGwHwZvDEJynIUkwPX5wpQ_0EBXXVkeBZad6yNyggriyMrHVgeRCg0SWxxTAfaGW7cj51XJznZ-OpHGF1JZBDvRXaljloSQzQS64",
+          "expires_in": 3600,
+          "token_type": "Bearer"
+        }
+    http_version: 
+  recorded_at: Thu, 27 Jun 2019 15:13:05 GMT
+- request:
+    method: get
+    uri: https://sheets.googleapis.com/v4/spreadsheets/18fcQA_KSbo0cuQzHZJvcIAIXdK0OBvXsjJPtJgQHEG4/values/Users!A2:E
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Outwood Honours/0.0.0 google-api-ruby-client/0.30.3 Linux/5.0.0-19-generic
+        (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 27 Jun 2019 15:13:05 GMT
+      Authorization:
+      - Bearer ya29.c.Elo0B1b1sX9NIEHgP1sQRAmFGwHwZvDEJynIUkwPX5wpQ_0EBXXVkeBZad6yNyggriyMrHVgeRCg0SWxxTAfaGW7cj51XJznZ-OpHGF1JZBDvRXaljloSQzQS64
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Encoding:
+      - gzip
+      Date:
+      - Thu, 27 Jun 2019 15:13:05 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "range": "Users!A2:E4",
+          "majorDimension": "ROWS",
+          "values": [
+            [
+              "n.houlton@grange.outwood.com",
+              "Houlton",
+              "Nick Houlton",
+              "Nick",
+              "/Staff/grange"
+            ],
+            [
+              "s31389@student.outwood.com",
+              "Prince",
+              "Callum Prince",
+              "Callum",
+              "/Students/offRoll"
+            ],
+            [
+              "s31665@student.outwood.com",
+              "Salu",
+              "Jolaade Salu",
+              "Jolaade",
+              "/Students/Secondary/grange"
+            ]
+          ]
+        }
+    http_version: 
+  recorded_at: Thu, 27 Jun 2019 15:13:05 GMT
+recorded_with: VCR 5.0.0

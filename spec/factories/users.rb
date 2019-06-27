@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :user do
     email { FFaker::Internet.email }
@@ -6,13 +8,13 @@ FactoryBot.define do
     uid { rand(0..10_000) }
     role { rand(0..1) }
     active { true }
-  end
 
-  factory :student do
-    role { 'student' }
-  end
+    factory :student do
+      role { 'student' }
+    end
 
-  factory :employee do
-    role { 'employee' }
+    factory :staff do
+      role { 'staff' }
+    end
   end
 end

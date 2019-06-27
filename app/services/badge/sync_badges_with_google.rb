@@ -3,7 +3,6 @@
 require 'google/apis/sheets_v4'
 class Badge
   class SyncBadgesWithGoogle
-    BADGES_SHEET_ID = '1qNso27BVEdbzy1nsl5OkATnues5SvZhdXeqdt4M4M44'
 
     def initialize
       @service = Google::Apis::SheetsV4::SheetsService.new
@@ -18,9 +17,9 @@ class Badge
     end
 
     def download_spreadsheet_data
-      @categories = @service.get_spreadsheet_values(BADGES_SHEET_ID, 'Modules!A2:C')
-      @awarders = @service.get_spreadsheet_values(BADGES_SHEET_ID, 'Awarders!A2:B')
-      @badges = @service.get_spreadsheet_values(BADGES_SHEET_ID, 'Badges!A2:F')
+      @categories = @service.get_spreadsheet_values(ENV['GOOGLE_BADGES_SPREADSHEET'], 'Modules!A2:C')
+      @awarders = @service.get_spreadsheet_values(ENV['GOOGLE_BADGES_SPREADSHEET'], 'Awarders!A2:B')
+      @badges = @service.get_spreadsheet_values(ENV['GOOGLE_BADGES_SPREADSHEET'], 'Badges!A2:F')
     end
 
     def add_to_database
@@ -44,6 +43,7 @@ class Badge
           badge.category = Category.where(name: b[1]).first
           badge.name = b[2]
           badge.awarder = Awarder.where(name: b[3]).first
+          
           # adjust to work with multiple badges
           required_badges = Badge.unscoped.where(name: b[4]).first
           badge.required_badges = [required_badges] if required_badges.present?

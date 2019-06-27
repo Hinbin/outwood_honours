@@ -51,6 +51,22 @@ ActiveRecord::Schema.define(version: 2019_06_21_075311) do
     t.index ["required_badge_id", "badge_id"], name: "index_required_badges_on_required_badge_id_and_badge_id", unique: true
   end
 
+  create_table "school_organisation_paths", force: :cascade do |t|
+    t.bigint "school_id", null: false
+    t.string "org_path"
+    t.string "string"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["school_id"], name: "index_school_organisation_paths_on_school_id"
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -61,12 +77,14 @@ ActiveRecord::Schema.define(version: 2019_06_21_075311) do
     t.string "given_name"
     t.integer "role"
     t.boolean "active"
-    t.string "school"
+    t.bigint "school_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["school_id"], name: "index_users_on_school_id"
   end
 
   add_foreign_key "badges", "awarders"
   add_foreign_key "badges", "categories"
+  add_foreign_key "school_organisation_paths", "schools"
 end

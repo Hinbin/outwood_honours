@@ -13,4 +13,13 @@ module SessionHelpers
         }
       )
   end
+
+  def setup_school_database
+    grange = create(:school, name: 'Outwood Grange')
+    city = create(:school, name: 'Outwood City Academy')
+    cityfields = create(:school, name: 'Outwood City Fields')
+    create(:school_organisation_path, org_path: '/Students/Secondary/grange', school: grange)
+    create(:school_organisation_path, org_path: '/Students/Secondary/city', school: city)
+    create(:school_organisation_path, org_path: '/Students/Secondary/cityfields', school: cityfields)
+  end
 end

@@ -3,8 +3,6 @@
 require 'google/apis/sheets_v4'
 class User
   class SyncUsersWithGoogle
-    USER_SHEET_ID = '18fcQA_KSbo0cuQzHZJvcIAIXdK0OBvXsjJPtJgQHEG4'
-
     def initialize
       @service = Google::Apis::SheetsV4::SheetsService.new
       @service.client_options.application_name = 'Outwood Honours'
@@ -18,29 +16,46 @@ class User
     end
 
     def download_spreadsheet_data
-      @users = @service.get_spreadsheet_values(USER_SHEET_ID, 'Users!A2:E')
+      @users = @service.get_spreadsheet_values(ENV['GOOGLE_USER_SPREADSHEET'], 'Users!A2:E')
     end
 
     def add_to_database
       @users.values.each do |u|
-        User.where(email: u[0]).first_or_initialize do |user|
-          user.email = u[0]
-          user.family_name = u[1]
-          user.given_name = u[3]
-          user.role = determine_user_role(user, u[4])
-          user.school = determine_user_school(user, u[4])
-          user.password = Devise.friendly_token.first(10)
-          user.save!
-        end
+        user = User.where(email: u[0]).first_or_initialize
+        user.email = u[0]
+        user.family_name = u[1]
+        user.given_name = u[3]
+        user.active = true
+        user.role = determine_user_role(user, u[4])
+        user.school = determine_user_school(user, u[4])
+        user.password = Devise.friendly_token.first(10)
+
+        user.save! if user.changed?
       end
     end
 
     def determine_user_role(user, orgPath)
-      'student'
+      if orgPath.match(/offRoll/)
+        user.active = false
+        'inactive'
+      elsif orgPath.match(/Staff/)
+        'staff'
+      elsif orgPath.match(/Student/)
+        'student'
+      else
+        user.active = false
+        'inactive'
+      end
     end
 
     def determine_user_school(user, orgPath)
-      'Outwood Grange'
+      school = SchoolOrganisationPath.where(org_path: orgPath).first
+      if school.present?
+        school.school
+      else
+        user.active = false
+        nil
+      end
     end
   end
 end

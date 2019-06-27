@@ -5,6 +5,8 @@
       = random_image(@badge)
     p.text-center.font-italic = @badge.criteria
     p.text-center = "Awarded by #{@badge.awarder.name}"
+
+    =simple_form_for(BadgeRequest.new)
   
 
 

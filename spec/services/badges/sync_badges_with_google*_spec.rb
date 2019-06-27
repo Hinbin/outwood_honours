@@ -6,7 +6,7 @@ RSpec.describe Badge::SyncBadgesWithGoogle, :vcr do
   let(:first_badge) { Badge.where(external_id: 1).first }
   let(:first_awarder) { Awarder.where(external_id: 1).first }
 
-  context 'when syncing awarder data from Google', :focus, vcr: :all do
+  context 'when syncing awarder data from Google' do
     it 'sets the awarder name correctly' do
       described_class.new.call
       expect(first_awarder.name).to eq('PE teacher')
@@ -14,6 +14,7 @@ RSpec.describe Badge::SyncBadgesWithGoogle, :vcr do
   end
 
   context 'when syncing badge data from Google' do
+
     it 'gets the data that is in the badges spreadsheet' do
       described_class.new.call
       expect(Badge.count).to be > 0

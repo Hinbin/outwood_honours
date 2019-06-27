@@ -41,8 +41,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       # Additional fields
       t.integer :role
       t.boolean :active
-      t.string  :school
-      
+      t.references :school, index: true
+
       t.timestamps null: false
     end
 

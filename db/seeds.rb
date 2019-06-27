@@ -8,4 +8,4 @@
 
 Awarder.create(name: 'Learning Manager')
 Category.create(name: 'Charity')
-Badge.create!(name: 'Charity Level 1', awarder: Awarder.find(1), category: Category.find(1), criteria: 'Do some charity')
+School.create(name:'No School', active: false)
