@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
-class BadgesController < ApplicationController
+class BadgeRequestsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_badge, only: %i[show]
+  before_action :set_badge_request, only: %i[show]
+
+  def create
+    badge_request = BadgeRequest.create(badge_request_params)
+    redirect_to badge_request.badge
+  end
 
   # GET /badges
   # GET /badges.json
@@ -19,12 +24,12 @@ class BadgesController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_badge
-    @badge = Badge.find(params[:id])
+  def set_badge_request
+    @badge = BadgeRequest.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def badge_params
-    params.fetch(:badge, {})
+  def badge_request_params
+    params.require(:badge_request).permit(:staff_id, :student_id, :badge_id, :comment)
   end
 end

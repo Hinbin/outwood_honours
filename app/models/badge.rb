@@ -4,6 +4,7 @@ class Badge < ApplicationRecord
   has_one_attached :badge_image
   belongs_to :awarder
   belongs_to :category
+  has_many :badge_requests
 
   has_and_belongs_to_many :required_badges,
                           class_name: 'Badge',

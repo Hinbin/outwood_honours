@@ -16,4 +16,8 @@ class User < ApplicationRecord
     user = User.where(email: data['email']).first
     user
   end
+
+  def to_label
+    "#{given_name.first} #{family_name} - #{email}"
+  end
 end

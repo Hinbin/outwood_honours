@@ -107,3 +107,6 @@ gem 'pundit'
 
 # High Voltage for static web pages (login screen)
 gem 'high_voltage', '~> 3.1'
+
+# Simple forms
+gem 'simple_form'

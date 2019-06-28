@@ -7,5 +7,5 @@ RSpec.describe 'Student views badges available' do
     badge
   end
  
-  it 'filters badges by category'
+  it 'filters badges by category''
 end

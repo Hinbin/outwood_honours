@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_21_075311) do
+ActiveRecord::Schema.define(version: 2019_06_27_180406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 2019_06_21_075311) do
     t.integer "external_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "badge_requests", force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "staff_id", null: false
+    t.bigint "badge_id"
+    t.string "comment"
+    t.integer "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id", "student_id"], name: "index_badge_requests_on_badge_id_and_student_id", unique: true
+    t.index ["badge_id"], name: "index_badge_requests_on_badge_id"
+    t.index ["student_id", "badge_id"], name: "index_badge_requests_on_student_id_and_badge_id", unique: true
   end
 
   create_table "badges", force: :cascade do |t|
@@ -84,6 +97,7 @@ ActiveRecord::Schema.define(version: 2019_06_21_075311) do
     t.index ["school_id"], name: "index_users_on_school_id"
   end
 
+  add_foreign_key "badge_requests", "badges"
   add_foreign_key "badges", "awarders"
   add_foreign_key "badges", "categories"
   add_foreign_key "school_organisation_paths", "schools"
