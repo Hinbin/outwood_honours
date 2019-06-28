@@ -110,3 +110,6 @@ gem 'high_voltage', '~> 3.1'
 
 # Simple forms
 gem 'simple_form'
+
+# Amazon web servicess
+gem 'aws-sdk-rails'
