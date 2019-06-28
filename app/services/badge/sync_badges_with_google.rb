@@ -45,8 +45,8 @@ class Badge
           badge.awarder = Awarder.where(name: b[3]).first
           
           # adjust to work with multiple badges
-          required_badges = Badge.unscoped.where(name: b[4]).first
-          badge.required_badges = [required_badges] if required_badges.present?
+          badge_requirement = Badge.unscoped.where(name: b[4]).first
+          badge.badge_requirements = [badge_requirement] if badge_requirement.present?
           badge.criteria = b[5]
           badge.save!
         end

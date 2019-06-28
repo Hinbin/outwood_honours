@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2019_06_27_180406) do
     t.index ["student_id", "badge_id"], name: "index_badge_requests_on_student_id_and_badge_id", unique: true
   end
 
+  create_table "badge_requirements", force: :cascade do |t|
+    t.integer "badge_id"
+    t.integer "badge_requirement_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id", "badge_requirement_id"], name: "index_badge_requirements_on_badge_id_and_badge_requirement_id", unique: true
+    t.index ["badge_requirement_id", "badge_id"], name: "index_badge_requirements_on_badge_requirement_id_and_badge_id", unique: true
+  end
+
   create_table "badges", force: :cascade do |t|
     t.string "name", null: false
     t.integer "external_id", null: false
@@ -53,15 +62,6 @@ ActiveRecord::Schema.define(version: 2019_06_27_180406) do
     t.integer "external_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "required_badges", force: :cascade do |t|
-    t.integer "badge_id"
-    t.integer "required_badge_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["badge_id", "required_badge_id"], name: "index_required_badges_on_badge_id_and_required_badge_id", unique: true
-    t.index ["required_badge_id", "badge_id"], name: "index_required_badges_on_required_badge_id_and_badge_id", unique: true
   end
 
   create_table "school_organisation_paths", force: :cascade do |t|

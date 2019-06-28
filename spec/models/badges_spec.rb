@@ -13,5 +13,5 @@ RSpec.describe Badge, type: :model do
 
   it { is_expected.to belong_to(:awarder) }
   it { is_expected.to belong_to(:category) }
-  it { is_expected.to have_and_belong_to_many(:required_badges) }
+  it { is_expected.to have_and_belong_to_many(:badge_requirements) }
 end
