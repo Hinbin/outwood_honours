@@ -49,7 +49,7 @@ class Badge
           badge.badge_requirements = [badge_requirement] if badge_requirement.present?
           badge.criteria = b[5]
           badge.save!
-        end
+        end 
       end
     end
   end
