@@ -6,6 +6,8 @@ class BadgeRequestsController < ApplicationController
 
   def create
     badge_request = BadgeRequest.create(badge_request_params)
+    badge_request.status = 'pending'
+    badge_request.save
     redirect_to badge_request.badge
   end
 
