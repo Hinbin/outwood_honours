@@ -13,7 +13,6 @@ module BadgeRequests
 
     def send_mails_to_users_with_requests
       @users.each do |u|
-        Rails.logger.debug "Sending badge request email to #{u.email}"
         BadgeRequestMailer.with(user: u).badge_request_email.deliver_now
       end
     end

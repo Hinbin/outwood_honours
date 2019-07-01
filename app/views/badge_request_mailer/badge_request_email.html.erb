@@ -9,7 +9,7 @@
     <p>
       <ul>
         <% @badge_requests.each do |br| %>
-          <li><%= "#{br.student.given_name} #{br.student.family_name} is requesting a #{br.badge.name} badge"%></li>          
+          <li><%= "#{br.student.given_name} #{br.student.family_name} is requesting the #{br.badge.name} badge"%></li>          
         <% end %>
       </ul>
     </p>
