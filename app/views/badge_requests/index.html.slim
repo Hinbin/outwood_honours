@@ -1,0 +1,18 @@
+=javascript_pack_tag('badge_request')
+.container
+  table.table#badgeTable
+    thead.thead-dark
+      th scope='col' Name
+      th scope='col'Badge
+      th scope='col'Comment  
+      th.mx-2 scope='col'
+      th.mx-2 scope='col'
+    tbody    
+      -@badge_requests.each do |br|
+        tr
+          td scope='row' #{br.student.given_name} #{br.student.family_name}
+          td=br.badge.name
+          td=br.comment
+          td=button_to 'Approve', br, class: 'btn btn-success', data: {id: br.id}, remote: true, method: :patch, params: { status: 'approved' } 
+          td=button_to 'Deny', br, class: 'btn btn-danger', data: {id: br.id}, remote: true, method: :patch, params: { status: 'denied'}
+s

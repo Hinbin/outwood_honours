@@ -1,6 +1,7 @@
 class BadgeRequestMailer < ApplicationMailer
   def badge_request_email
-    @badge_request = params[:badge_request]
-    mail(to: @badge_request.staff.email, subject: 'You have a badge to approve!')
+    @user = params[:user]
+    @badge_requests = BadgeRequest.where(staff: @user, status: 'pending')
+    mail(to: @user.email, subject: 'You have a badge to approve!')
   end
 end

@@ -10,6 +10,7 @@ class User < ApplicationRecord
   enum role: %i[student staff inactive]
 
   belongs_to :school, optional: true
+  has_many :badge_requests
 
   def self.from_omniauth(access_token)
     data = access_token.info
