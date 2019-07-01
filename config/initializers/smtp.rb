@@ -5,6 +5,6 @@ ActionMailer::Base.smtp_settings = {
   domain: 'outwood.com',
   user_name: ENV['SENDGRID_USERNAME'],
   password: ENV['SENDGRID_PASSWORD'],
-  authentication: :login,
+  authentication: :plain,
   enable_starttls_auto: true
 }
