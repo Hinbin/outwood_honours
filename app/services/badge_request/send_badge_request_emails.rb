@@ -1,4 +1,4 @@
-module BadgeRequest
+class BadgeRequest
   class SendBadgeRequestEmails
     def initialize
       @users = User.joins('INNER JOIN badge_requests ON users.id = badge_requests.staff_id')
