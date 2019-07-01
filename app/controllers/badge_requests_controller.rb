@@ -19,7 +19,8 @@ class BadgeRequestsController < ApplicationController
 
   def update
     @badge_request.status = badge_update_params
-    @badge_request.save!
+    BadgeRequest::AwardBadge.new(@badge_request).call if @badge_request.status == 'approved'
+    @badge_request.save! if @badge_request.status == 'denied'
   end
 
   private

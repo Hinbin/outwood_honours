@@ -6,11 +6,16 @@
     p.text-center.font-italic = @badge.criteria
     p.text-center = "Awarded by #{@badge.awarder.name}"
 
-    =simple_form_for(BadgeRequest.new) do |f|
-      = f.input :staff_id, collection: @teachers, as: :select, input_html: { class:'col-sm-9 form-control' }, label_html: {class: 'col-sm-3 col-form-label'}, wrapper_html: {class: 'form-group row'}
-      = f.input :comment, input_html: { class:'col-sm-9 form-control' }, label_html: {class: 'col-sm-3 col-form-label'}, wrapper_html: {class: 'form-group row'}
-      = f.input_field :student_id, value: current_user.id, as: :hidden
-      = f.input_field :badge_id, value: @badge.id, as: :hidden
-      = f.button :submit, class: 'btn btn-primary', wrapper_html: {class: 'form-group row'}
+    -if @badge_request.present?
+      p = "You have requested this badge from #{@badge_request.staff.email}."
+    -elsif @awarded_badge.present?
+      p = "You were awarded this badge on #{@awarded_badge.updated_at}."
+    -else
+      =simple_form_for(BadgeRequest.new) do |f|
+        = f.input :staff_id, collection: @teachers, as: :select, input_html: { class:'col-sm-9 form-control' }, label_html: {class: 'col-sm-3 col-form-label'}, wrapper_html: {class: 'form-group row'}
+        = f.input :comment, input_html: { class:'col-sm-9 form-control' }, label_html: {class: 'col-sm-3 col-form-label'}, wrapper_html: {class: 'form-group row'}
+        = f.input_field :student_id, value: current_user.id, as: :hidden
+        = f.input_field :badge_id, value: @badge.id, as: :hidden
+        = f.button :submit, class: 'btn btn-primary', wrapper_html: {class: 'form-group row'}
   
 =link_to 'Back', badges_path

@@ -3,6 +3,6 @@
 namespace :send_emails do
   desc 'Send badge request e-mails'
   task badge_requests: :environment do
-    BadgeRequests::SendBadgeRequestEmails.new.call
+    BadgeRequest::SendBadgeRequestEmails.new.call
   end
 end

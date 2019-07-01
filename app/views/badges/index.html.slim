@@ -8,7 +8,7 @@
     .card-columns
       -@badges.shuffle.each do |badge|
         =link_to badge do
-          .card.text-dark
+          .card.text-dark class=('bg-success' if @awarded_badges.include? badge.id)
             .card-header
               =random_image(badge)
               h4.text-center = badge.name

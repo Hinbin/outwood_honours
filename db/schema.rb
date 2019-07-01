@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_27_180406) do
+ActiveRecord::Schema.define(version: 2019_07_01_160501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "awarded_badges", force: :cascade do |t|
+    t.bigint "badge_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_awarded_badges_on_badge_id"
+    t.index ["user_id"], name: "index_awarded_badges_on_user_id"
+  end
 
   create_table "awarders", force: :cascade do |t|
     t.string "name"
@@ -97,6 +106,8 @@ ActiveRecord::Schema.define(version: 2019_06_27_180406) do
     t.index ["school_id"], name: "index_users_on_school_id"
   end
 
+  add_foreign_key "awarded_badges", "badges"
+  add_foreign_key "awarded_badges", "users"
   add_foreign_key "badge_requests", "badges"
   add_foreign_key "badges", "awarders"
   add_foreign_key "badges", "categories"
