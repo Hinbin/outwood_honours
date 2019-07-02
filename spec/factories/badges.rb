@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :badge do
-    name { FFaker::HipsterIpsum.words(2) }
+    sequence(:name) { |n| FFaker::HipsterIpsum.words(2).join(' ') + n.to_s }
     sequence(:external_id)
     category
     awarder

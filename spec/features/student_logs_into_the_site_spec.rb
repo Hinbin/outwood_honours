@@ -25,7 +25,6 @@ RSpec.describe 'Student logs into the site', type: :feature, js: true do
       visit(root_path)
       click_link('Log in with Google')
       expect(page).to have_content('account has not been found')
-
     end
   end
 end

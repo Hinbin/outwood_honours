@@ -19,6 +19,8 @@ class User < ApplicationRecord
   end
 
   def to_label
+    return email unless given_name.present? && family_name.present?
+    
     "#{given_name.first} #{family_name} - #{email}"
   end
 end

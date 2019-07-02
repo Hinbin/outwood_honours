@@ -8,6 +8,9 @@ FactoryBot.define do
     uid { rand(0..10_000) }
     role { rand(0..1) }
     active { true }
+    given_name { FFaker::Name.first_name}
+    family_name { FFaker::Name.last_name}
+    school
 
     factory :student do
       role { 'student' }

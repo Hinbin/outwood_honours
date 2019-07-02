@@ -14,7 +14,7 @@ class BadgesController < ApplicationController
   # GET /badges/1
   # GET /badges/1.json
   def show
-    @teachers = User.where(role: 'staff', school: current_user.school)
+    @staff = User.where(role: 'staff', school: current_user.school)
     @awarded_badge = AwardedBadge.where(user: current_user, badge: @badge).first
     @badge_request = BadgeRequest.where(student: current_user, badge: @badge).first
   end
