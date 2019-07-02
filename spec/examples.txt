@@ -10,9 +10,9 @@ example_id                                                     | status  | run_t
 ./spec/features/student_requests_a_badge_spec.rb[1:2:1]        | passed  | 0.9235 seconds  |
 ./spec/features/student_requests_a_badge_spec.rb[1:2:2]        | passed  | 0.93025 seconds |
 ./spec/features/student_requests_a_badge_spec.rb[1:3:1]        | passed  | 0.35395 seconds |
-./spec/features/student_views_badges_available_spec.rb[1:1]    | passed  | 0.47554 seconds |
-./spec/features/student_views_badges_available_spec.rb[1:2]    | passed  | 5.19 seconds    |
-./spec/features/student_views_badges_available_spec.rb[1:3]    | failed  | 2.52 seconds    |
+./spec/features/student_views_badges_available_spec.rb[1:1]    | passed  | 0.55682 seconds |
+./spec/features/student_views_badges_available_spec.rb[1:2]    | passed  | 0.56541 seconds |
+./spec/features/student_views_badges_available_spec.rb[1:3]    | passed  | 5.56 seconds    |
 ./spec/helpers/badges_helper_spec.rb[1:1]                      | pending | 0.00001 seconds |
 ./spec/mailers/badge_request_mailer_spec.rb[1:1]               | unknown |                 |
 ./spec/mailers/badge_request_mailer_spec.rb[1:2]               | unknown |                 |

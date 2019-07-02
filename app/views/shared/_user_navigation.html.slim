@@ -1,0 +1,19 @@
+nav class="navbar navbar-expand-lg navbar-light bg-outwood navbar-dark mb-3" id="navbar-main"  
+  .navbar-brand      
+    =link_to badges_path do
+      h1 class="navbar-text text-white" id="branding-text" Outwood Honours
+    
+  button.navbar-toggler type="button" data-toggle="collapse" data-target="#userNavBar" aria-controls="userNavBar" aria-expanded="false" aria-label="Toggle navigation"
+    span class="navbar-toggler-icon"
+    
+  .collapse.navbar-collapse#userNavBar
+    .navbar-nav
+      .nav-link =link_to('Badges', badges_path, class: 'text-white')
+    -if current_user.staff?
+      .navbar-nav
+        .nav-link =link_to('Badge Requests', badge_requests_path, class: 'text-white')
+
+    .navbar-nav.ml-auto =button_to('Logout', destroy_user_session_path, class: 'btn btn-dark', method: :delete)
+    
+
+      
