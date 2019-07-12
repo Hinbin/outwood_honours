@@ -11,7 +11,7 @@ jobs:
         environment:
             BUNDLE_PATH: vendor/bundle
             PGHOST: 127.0.0.1
-            PGUSER: circleci-demo-ruby
+            PGUSER: circleci
             RAILS_ENV: test
 
       # Specify service dependencies here if necessary
