@@ -37,6 +37,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 3.5'
+  gem 'rspec_junit_formatter'
 
   # Fast creation of test objects
   gem 'factory_bot_rails'
