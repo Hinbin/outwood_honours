@@ -41,10 +41,9 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Database setup
+      - run: sudo apt install -y postgresql-client || true      
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
-
-      - run: sudo apt install -y postgresql-client || true
 
       # run tests!
       - run:
