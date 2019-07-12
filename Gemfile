@@ -82,7 +82,7 @@ group :test do
   gem 'webmock'
 
   # Simple Cov
-  gem 'simplecov', require: false # For code coverage
+  gem 'coveralls', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
