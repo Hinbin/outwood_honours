@@ -43,6 +43,9 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      
+        environment:
+            DATABASE_URL: "postgres://ubuntu@localhost:5432/outwood_honours"
 
       # Database setup
       - run: sudo apt install -y postgresql-client || true      
