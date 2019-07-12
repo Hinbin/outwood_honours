@@ -79,6 +79,9 @@ group :test do
   # Allows us to create a fake API
   gem 'vcr'
   gem 'webmock'
+
+  # Simple Cov
+  gem 'simplecov', require: false # For code coverage
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

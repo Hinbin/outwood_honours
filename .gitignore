@@ -7,6 +7,10 @@
 # Ignore bundler config.
 /.bundle
 
+
+#Ignore code coverage output
+coverage
+
 #.Ignore .env files
 .env.development
 .env.test

@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Awarder.create(name: 'Learning Manager')
-Category.create(name: 'Charity')
-School.create(name:'No School', active: false)
+oga = School.create(name:'Outwood Grange')
+SchoolOrganisationPath.create(school: oga, org_path: '/Staff/grange')
+SchoolOrganisationPath.create(school: oga, org_path: '/Students/Secondary/grange')

@@ -28,7 +28,7 @@ class User
         user.active = true
         user.role = determine_user_role(user, u[4])
         user.school = determine_user_school(user, u[4])
-        user.password = Devise.friendly_token.first(10)
+        user.password = Devise.friendly_token.first(10) if user.encrypted_password.blank?
 
         user.save! if user.changed?
       end

@@ -10,7 +10,7 @@ RSpec.describe 'Student logs into the site', type: :feature, js: true do
       stub_omniauth(user_login)
       visit(root_path)
       click_link('Log in with Google')
-      expect(page).to have_content(user_login.email)
+      expect(page).to have_content(user_login.family_name).and have_content(user_login.given_name)
     end
 
     it 'redirects a user a the homepage if not logged in' do

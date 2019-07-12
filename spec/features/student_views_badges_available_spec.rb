@@ -1,4 +1,4 @@
-RSpec.describe 'Student views badges available', :focus, type: :feature, js: true do
+RSpec.describe 'Student views badges available', type: :feature, js: true do
   let(:badges) { create_list(:badge, 10) }
   let(:student) { create(:student) }
 

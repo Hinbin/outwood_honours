@@ -3,7 +3,6 @@
 require 'google/apis/sheets_v4'
 class Badge
   class SyncBadgesWithGoogle
-
     def initialize
       @service = Google::Apis::SheetsV4::SheetsService.new
       @service.client_options.application_name = 'Outwood Honours'
@@ -43,13 +42,13 @@ class Badge
           badge.category = Category.where(name: b[1]).first
           badge.name = b[2]
           badge.awarder = Awarder.where(name: b[3]).first
-          
+
           # adjust to work with multiple badges
           badge_requirement = Badge.unscoped.where(name: b[4]).first
           badge.badge_requirements = [badge_requirement] if badge_requirement.present?
           badge.criteria = b[5]
           badge.save!
-        end 
+        end
       end
     end
   end

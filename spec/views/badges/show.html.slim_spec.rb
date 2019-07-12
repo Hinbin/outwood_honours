@@ -13,14 +13,17 @@ RSpec.describe 'badges/show', type: :view do
   end
 
   context 'when requesting a badge' do
+    subject { render }
+
     before do
       sign_in student
+      render
     end
 
-    it 'shows the badge name' do
-      render
-      expect(rendered).to have_content(badge.name)
-    end
+    it { is_expected.to have_content(badge.name) }
+    it { is_expected.to have_content(badge.criteria) }
+    it { is_expected.to have_content(badge.awarder.name) }
+    it { is_expected.to have_field('Comment') }
 
     it 'renders special characters in the name -/.' do
       character_string = '-\\+.@#!'
@@ -28,25 +31,5 @@ RSpec.describe 'badges/show', type: :view do
       render
       expect(rendered).to have_content(character_string)
     end
-
-    it 'shows the badge criteria' do
-      expect(rendered).to have_content(badge.criteria)
-    end
-
-    it 'shows the badge awarder' do
-      expect(rendered).to have_content(badge.awarder.name)
-    end
-
-    it 'shows an awarder selection box' do
-      render
-      expect(rendered).to have_select('Awarder')
-    end
-
-    it 'shows a comment message box' do
-      render
-      expect(rendered).to have_input('Comment')
-    end
   end
-
-
 end
