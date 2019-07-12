@@ -4,24 +4,24 @@
 #
 version: 2
 jobs:
-build:
-    working_directory: ~/circleci-demo-ruby-rails
-    
-    # Primary container image where all commands run
-    
-    docker:
-      - image: circleci/ruby:2.6.3-node
-        environment:
-          RAILS_ENV: test
-          PGHOST: 127.0.0.1
-          PGUSER: root
-    
-    # Service container image available at `host: localhost`
-    
-      - image: circleci/postgres:10.9
-        environment:
-          POSTGRES_USER: root
-          POSTGRES_DB: circle-test_test
+  build:
+      working_directory: ~/circleci-demo-ruby-rails
+      
+      # Primary container image where all commands run
+      
+      docker:
+        - image: circleci/ruby:2.6.3-node
+          environment:
+            RAILS_ENV: test
+            PGHOST: 127.0.0.1
+            PGUSER: root
+      
+      # Service container image available at `host: localhost`
+      
+        - image: circleci/postgres:10.9
+          environment:
+            POSTGRES_USER: root
+            POSTGRES_DB: circle-test_test
         
     steps:
       - checkout
