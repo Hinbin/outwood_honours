@@ -22,7 +22,7 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.ignore_localhost = true # allows oAuth testing
   config.configure_rspec_metadata!
-  config.ignore_hosts 'chromedriver.storage.googleapis.com', 'github.com'
+  config.ignore_hosts 'chromedriver.storage.googleapis.com', 'github.com', 'github-production-release-asset-2e65be.s3.amazonaws.com'
 end
 
 # Add additional requires below this line. Rails is not loaded until this point!
