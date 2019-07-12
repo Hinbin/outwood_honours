@@ -1,24 +1,5 @@
-# README
+# Outwood Honours
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![CircleCI](https://circleci.com/gh/Hinbin/outwood_honours.svg?style=svg)](https://circleci.com/gh/Hinbin/outwood_honours)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Outwood Honours allows students to request badges for acheivements they have earned throughout their time at an Outwood School.
