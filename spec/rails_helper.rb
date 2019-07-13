@@ -108,6 +108,7 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :view
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include SessionHelpers, type: :feature
+  Capybara.server = :puma, { Silent: true }
 end
 
 OmniAuth.config.test_mode = true
