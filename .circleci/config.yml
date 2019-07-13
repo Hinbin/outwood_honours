@@ -43,6 +43,10 @@ jobs:
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
       - run:
+          name: yarn integrity check
+          command: |	
+            yarn install --check-files
+      - run:
           name: precompile assets
           command: |
             bundle exec rails webpacker:compile
