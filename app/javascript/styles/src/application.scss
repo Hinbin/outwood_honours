@@ -2,7 +2,9 @@
 @import "base/variables";
 
 // Import Bootstrap
+@import "~bootstrap/dist/css/bootstrap";
 @import "bootstrap/scss/bootstrap";
+
 
 // Import base styles
 @import "base/page";
