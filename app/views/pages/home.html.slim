@@ -1,7 +1,91 @@
-.container
-  .col
+header.masthead.bg-primary.text-white.text-center   
+  .container.d-flex.align-items-center.flex-column
+    /! Masthead Image
+    =image_tag 'Outwood Honours Logo No Ribbons.png', class:'masthead-avatar mb-3'
+    /! Masthead Heading
+    h1.masthead-heading.text-uppercase.mb-0 Earn it.  Own it.
+    /! Icon Divider
+    .divider-custom.divider-light
+      .divider-custom-line
+      .divider-custom-icon
+        =icon('fas', 'star')
+      .divider-custom-line
+    /! Masthead Subheading
+section#portfolio.page-section.portfolio.text-center
+  .container
+    /! Badges Section Heading
+    h2.page-section-heading.text-uppercase.text-secondary.mb-0 Badges Spotlight
+    /! Icon Divider
+    .divider-custom
+      .divider-custom-line
+      .divider-custom-icon
+        =icon('fas', 'star' )
+      .divider-custom-line
+    /! Portfolio Grid Items
     .row
-      .d-flex.mx-auto    
-        =image_tag('Outwood Honours Logo.png')
+      /! Portfolio Item 1
+      .col-md-6.col-lg-4
+        .portfolio-item.mx-auto data-target="#portfolioModal1" data-toggle="modal" 
+          .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+            .portfolio-item-caption-content.text-center.text-white
+              i.fas.fa-plus.fa-3x
+          =image_tag('calculator.png')
+          p =Badge.first.name
+      /! Portfolio Item 2
+      .col-md-6.col-lg-4
+        .portfolio-item.mx-auto data-target="#portfolioModal2" data-toggle="modal" 
+          .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+            .portfolio-item-caption-content.text-center.text-white
+              i.fas.fa-plus.fa-3x
+          =image_tag('chemistry.png')
+          p =Badge.second.name
+      /! Portfolio Item 3
+      .col-md-6.col-lg-4
+        .portfolio-item.mx-auto data-target="#portfolioModal3" data-toggle="modal" 
+          .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+            .portfolio-item-caption-content.text-center.text-white
+              i.fas.fa-plus.fa-3x
+          =image_tag('france.png')
+          p =Badge.third.name
+      /! Portfolio Item 4
+      .col-md-6.col-lg-4
+        .portfolio-item.mx-auto data-target="#portfolioModal4" data-toggle="modal" 
+          .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+            .portfolio-item-caption-content.text-center.text-white
+              i.fas.fa-plus.fa-3x
+          =image_tag('geography.png')
+          p =Badge.fourth.name
+      /! Portfolio Item 5
+      .col-md-6.col-lg-4
+        .portfolio-item.mx-auto data-target="#portfolioModal5" data-toggle="modal" 
+          .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+            .portfolio-item-caption-content.text-center.text-white
+              i.fas.fa-plus.fa-3x
+          =image_tag('music.png')
+          p =Badge.find(20).name
+      /! Portfolio Item 6
+      .col-md-6.col-lg-4
+        .portfolio-item.mx-auto data-target="#portfolioModal6" data-toggle="modal" 
+          .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
+            .portfolio-item-caption-content.text-center.text-white
+              i.fas.fa-plus.fa-3x
+          =image_tag('hands.png')
+          p =Badge.find(21).name
+    /! /.row
+section#about.page-section.bg-primary.text-white.mb-0
+  .container
+    /! About Section Heading
+    h2.page-section-heading.text-center.text-uppercase.text-white About
+    /! Icon Divider
+    .divider-custom.divider-light
+      .divider-custom-line
+      .divider-custom-icon
+        i.fas.fa-star
+      .divider-custom-line
+    /! About Section Content
     .row
-      = link_to 'Log in with Google', user_google_oauth2_omniauth_authorize_path
+      .col-lg-4.ml-auto
+        p.lead Privacy Stuff to go here
+      .col-lg-4.mr-auto
+        p.lead Policy Stuff to go here
+

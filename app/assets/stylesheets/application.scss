@@ -13,10 +13,5 @@
  */
 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
-$enable-responsive-font-sizes: true;
-@import "bootstrap";
-
-
-.bg-outwood {
-  background-color: #5b3393;
-}
+@import "font-awesome-sprockets";
+@import "font-awesome";

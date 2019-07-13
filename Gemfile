@@ -96,9 +96,8 @@ gem 'slim'
 
 # Pretty things!
 # Bootstrap and JQuery for Bootstrap!
-gem 'bootstrap'
 gem 'font-awesome-sass'
-gem 'jquery-rails'
+gem 'sassc-rails'
 
 # Required for rails 6.1 (recommeneded 1.2)
 gem 'image_processing'

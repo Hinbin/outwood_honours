@@ -1,0 +1,30 @@
+.masthead {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  .masthead-heading {
+    font-size: 2.75rem;
+    line-height: 2.75rem;
+  }
+  .masthead-subheading {
+    font-size: 1.25rem;
+  }
+  .masthead-avatar {
+    width: 25rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .masthead {
+    .masthead-heading {
+      font-size: 4rem;
+      line-height: 3.5rem;
+    }
+    .masthead-subheading {
+      font-size: 1.5rem;
+    }
+    .masthead-avatar {
+      width: 40rem;
+    }
+
+  }
+}
