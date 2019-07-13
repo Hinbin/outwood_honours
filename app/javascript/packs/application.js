@@ -8,7 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 import '../styles/src/application.scss'
-require("bootstrap")
+require('bootstrap/js/dist')
 require("popper.js")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
