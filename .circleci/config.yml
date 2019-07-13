@@ -45,7 +45,7 @@ jobs:
       - run:
           name: precompile assets
           command: |
-            run: bundle exec rails webpacker:compile
+            bundle exec rails webpacker:compile
       - save_cache:
           paths:
             - ./vendor/bundle
