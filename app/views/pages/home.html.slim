@@ -11,7 +11,7 @@ header.masthead.bg-primary.text-white.text-center
         =icon('fas', 'star')
       .divider-custom-line
     /! Masthead Subheading
-section#portfolio.page-section.portfolio.text-center
+section#spotlight.page-section.portfolio.text-center
   .container
     /! Badges Section Heading
     h2.page-section-heading.text-uppercase.text-secondary.mb-0 Badges Spotlight
@@ -30,7 +30,6 @@ section#portfolio.page-section.portfolio.text-center
             .portfolio-item-caption-content.text-center.text-white
               i.fas.fa-plus.fa-3x
           =image_tag('calculator.png')
-          p =Badge.first.name
       /! Portfolio Item 2
       .col-md-6.col-lg-4
         .portfolio-item.mx-auto data-target="#portfolioModal2" data-toggle="modal" 
@@ -38,7 +37,6 @@ section#portfolio.page-section.portfolio.text-center
             .portfolio-item-caption-content.text-center.text-white
               i.fas.fa-plus.fa-3x
           =image_tag('chemistry.png')
-          p =Badge.second.name
       /! Portfolio Item 3
       .col-md-6.col-lg-4
         .portfolio-item.mx-auto data-target="#portfolioModal3" data-toggle="modal" 
@@ -46,7 +44,6 @@ section#portfolio.page-section.portfolio.text-center
             .portfolio-item-caption-content.text-center.text-white
               i.fas.fa-plus.fa-3x
           =image_tag('france.png')
-          p =Badge.third.name
       /! Portfolio Item 4
       .col-md-6.col-lg-4
         .portfolio-item.mx-auto data-target="#portfolioModal4" data-toggle="modal" 
@@ -54,7 +51,6 @@ section#portfolio.page-section.portfolio.text-center
             .portfolio-item-caption-content.text-center.text-white
               i.fas.fa-plus.fa-3x
           =image_tag('geography.png')
-          p =Badge.fourth.name
       /! Portfolio Item 5
       .col-md-6.col-lg-4
         .portfolio-item.mx-auto data-target="#portfolioModal5" data-toggle="modal" 
@@ -62,7 +58,6 @@ section#portfolio.page-section.portfolio.text-center
             .portfolio-item-caption-content.text-center.text-white
               i.fas.fa-plus.fa-3x
           =image_tag('music.png')
-          p =Badge.find(5).name
       /! Portfolio Item 6
       .col-md-6.col-lg-4
         .portfolio-item.mx-auto data-target="#portfolioModal6" data-toggle="modal" 
@@ -70,7 +65,6 @@ section#portfolio.page-section.portfolio.text-center
             .portfolio-item-caption-content.text-center.text-white
               i.fas.fa-plus.fa-3x
           =image_tag('hands.png')
-          p =Badge.find(6).name
     /! /.row
 section#about.page-section.bg-primary.text-white.mb-0
   .container
