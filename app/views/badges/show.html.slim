@@ -1,4 +1,4 @@
-.container
+.container.py-3
   .col
     h3.display-4.text-center = @badge.name
     .row
@@ -20,6 +20,6 @@
         = f.input :comment, input_html: { class:'col-sm-9 form-control' }, label_html: {class: 'col-sm-3 col-form-label'}, wrapper_html: {class: 'form-group row'}
         = f.input_field :student_id, value: current_user.id, as: :hidden
         = f.input_field :badge_id, value: @badge.id, as: :hidden
-        = f.button :submit, class: 'btn btn-primary', wrapper_html: {class: 'form-group row'}
+        = f.button :submit, class: 'btn btn-primary btn-block', wrapper_html: {class: 'form-group row'}
   
-=link_to 'Back', badges_path
+    =link_to 'Back', badges_path, class: 'btn btn-secondary btn-block my-3'

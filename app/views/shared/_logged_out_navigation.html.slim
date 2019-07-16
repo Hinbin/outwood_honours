@@ -1,10 +1,10 @@
 nav.navbar.navbar-expand-md.navbar-light#mainNav
   .navbar-brand =image_tag('OGAT-Students-First-Transparent-72dpi-RGB.png', height: 60, class:'d-inline-block align-top')
-  button.navbar-toggler.navbar-toggler-right.text-uppercase.font-weight-bold.bg-white.text-black.rounded aria-controls="navbarResponsive" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarResponsive" data-toggle="collapse" type="button" 
+  button.navbar-toggler.navbar-toggler-right.text-uppercase.font-weight-bold.bg-white.text-dark.rounded aria-controls="navbarResponsive" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarResponsive" data-toggle="collapse" type="button" 
     span =icon('fas', 'bars', class: 'mx-1') 
   .collapse.navbar-collapse#navbarResponsive
     ul.navbar-nav.ml-auto
-      li.nav-item.py-3.px-0.px-md-4.rounded = link_to 'Badge Spotlight', '#spotlight' 
-      li.nav-item.py-3.px-0.px-md-4.rounded = link_to 'About', '#about' 
+      li.nav-item.py-3.px-0.px-md-4.rounded = link_to 'Badge Spotlight', '#spotlight' , class:'text-dark'
+      li.nav-item.py-3.px-0.px-md-4.rounded = link_to 'About', '#about' , class:'text-dark'
 
-    =button_to 'Login', user_google_oauth2_omniauth_authorize_path, class: 'btn btn-primary'
+    =button_to 'Login', user_google_oauth2_omniauth_authorize_path, class: 'btn btn-block btn-primary'

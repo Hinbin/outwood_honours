@@ -1,9 +1,10 @@
-.container
+=javascript_pack_tag('badges')
+.container.py-3
   .col        
     .card-columns
       -@badges.shuffle.each do |badge|
         =link_to badge do
-          .card.text-dark class=('bg-success' if badge_awarded? badge)
+          .card.text-dark data-role='badge' data-category=badge.category_id class=('bg-success' if badge_awarded? badge)
             .card-header
               =random_image(badge)
               h4.text-center = badge.name

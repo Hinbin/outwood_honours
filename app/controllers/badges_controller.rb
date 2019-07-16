@@ -7,7 +7,7 @@ class BadgesController < ApplicationController
   # GET /badges
   # GET /badges.json
   def index
-    @badges = Badge.all
+    @badges = Badge.includes(:category).all
     @awarded_badges = AwardedBadge.where(user: current_user).pluck(:badge_id)
   end
 
