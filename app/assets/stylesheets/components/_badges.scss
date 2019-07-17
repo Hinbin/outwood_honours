@@ -13,7 +13,7 @@
 	border-radius: 0.75em;
 	display: inline-block;
 	top: 0;
-	transition: all 0.2s ease;
+	transition: all 0.4s ease;
 	&:before,
 	&:after {
 		position: absolute;
@@ -31,7 +31,7 @@
 		transform: rotate(-60deg);
 	}
 	&:hover {
-		top: -0.25em;
+		transform: rotate(360deg);
   }
   
   .ribbon {
@@ -64,7 +64,7 @@
 	top: 0;
 	transition: all 0.2s ease;	
 	&:hover {
-		top: -0.25em;
+			transform: scale(1.2,1.2)
 	
 }
 
@@ -78,7 +78,7 @@
   @include margin-auto;
   i.fa {
     font-size: 2em;
-    margin-top: 0.35em;
+    margin-top: 0.4em;
   }
 }
 
