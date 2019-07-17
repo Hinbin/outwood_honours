@@ -4,7 +4,7 @@ module BadgesHelper
   def badge_maker(badge)
     shapes = %w[circle-badge square-badge hex-badge]
 
-    "badge #{badge_colour(badge.category_id % 10)} #{shapes[badge.id % 3]}"
+    "honours-badge #{badge_colour(badge.category_id % 10)} #{shapes[badge.id % 3]}"
   end
 
   def badge_colour(num)

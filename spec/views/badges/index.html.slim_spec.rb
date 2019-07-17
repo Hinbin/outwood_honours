@@ -21,6 +21,6 @@ RSpec.describe 'badges/index', type: :view do
   end
 
   it 'shows badges' do
-    expect(rendered).to have_css('.badge')
+    expect(rendered).to have_css('.honours-badge')
   end
 end
