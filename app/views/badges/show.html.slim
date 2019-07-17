@@ -1,8 +1,10 @@
 .container.py-3
-  .col
     h3.display-4.text-center = @badge.name
-    .row
-      = random_image(@badge)
+    .row.col.justify-content-center
+      .h2.text-center class=badge_maker(@badge)
+        .inner-circle.red
+          i(class='fa fa-bolt text-white')
+        .ribbon Initiator
     p.text-center.font-italic = @badge.criteria
     p.text-center = "Awarded by #{@badge.awarder.name}"
 

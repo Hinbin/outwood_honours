@@ -5,8 +5,12 @@
       -@badges.shuffle.each do |badge|
         =link_to badge do
           .card.text-dark data-role='badge' data-category=badge.category_id class=('bg-success' if badge_awarded? badge)
-            .card-header
-              =random_image(badge)
+            .card-header.text-center
+              .h2 class=badge_maker(badge)
+                .inner-circle class=badge_colour(badge.id % 10)
+                  i class=( badge_icon(badge) )
+                - if badge.id % 4 == 0  
+                  .ribbon =badge.name.truncate(12)
               h4.text-center = badge.name
             .card-body
               p.text-center = badge.criteria
