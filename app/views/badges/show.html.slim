@@ -1,8 +1,9 @@
 .container.py-3
     h3.display-4.text-center#badgeName = @badge.name
+    h5.h5.py-2.text-center#badgeCategory =@badge.category.name
     =render partial:'shared/badge', locals: { badge: @badge }
     p.text-center.font-italic = @badge.criteria
-    p.text-center = "Awarded by #{@badge.awarder.name}"
+    p.text-center#badgeAwarder = "Awarded by #{@badge.awarder.name}"
 
     -if @badge_request.present?
       -if @badge_request.staff.present?

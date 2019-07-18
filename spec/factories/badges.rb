@@ -7,5 +7,7 @@ FactoryBot.define do
     category
     awarder
     criteria { FFaker::HipsterIpsum.sentence }
+    inner_colour { rand(0..9) }
+    icon_colour { rand(0..9) }
   end
 end

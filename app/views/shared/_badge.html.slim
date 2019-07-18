@@ -1,6 +1,6 @@
 .text-center
   .h1 class=badge_maker(badge)
-    .inner-circle class=badge_colour(badge.id % 10)
-      i class=( badge_icon(badge) )
+    .inner-circle class=badge.inner_colour
+      =icon('fa', badge.icon, class: "#{badge.icon_colour}-icon")
     - if badge.name.length < 12
       .ribbon =badge.name.truncate(12)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_18_081138) do
+ActiveRecord::Schema.define(version: 2019_07_18_081140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,10 @@ ActiveRecord::Schema.define(version: 2019_07_18_081138) do
     t.string "criteria"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "icon"
+    t.integer "inner_colour"
+    t.integer "level"
+    t.integer "icon_colour"
     t.index ["awarder_id"], name: "index_badges_on_awarder_id"
     t.index ["category_id"], name: "index_badges_on_category_id"
   end

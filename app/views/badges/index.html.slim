@@ -2,12 +2,5 @@
 .container.py-3
   .col        
     .card-columns
-      -@badges.shuffle.each do |badge|
-        =link_to badge do
-          .card.text-dark data-role='badge' data-category=badge.category_id class=('bg-success' if badge_awarded? badge)
-            .card-header.text-center
-              =render partial:'shared/badge', locals: { badge: badge }
-              h4.text-center = badge.name
-            .card-body
-              p.text-center = badge.criteria
+      =render partial: 'shared/badge_card', collection: @badges.shuffle, as: :badge
               

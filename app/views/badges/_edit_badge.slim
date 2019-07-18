@@ -1,7 +1,13 @@
 .section.py-5#editBadgeSection 
   h1.display-3 Edit Badge
   =simple_form_for(@badge) do |f|
-    = f.input :name, id: 'badge_name'
+    = f.input :name
+    = f.input :criteria
+    = f.association :category, label: 'Module'
+    = f.association :awarder
+    = f.input :icon
+    = f.input :inner_colour, collection: Badge.inner_colours, value_method: :first
+    = f.input :icon_colour, collection: Badge.icon_colours, value_method: :first
     = f.button :submit, class: 'btn btn-primary btn-block'
   
 

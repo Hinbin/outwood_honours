@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Badge < ApplicationRecord
+  before_save :default_values
+
   has_one_attached :badge_image
   belongs_to :awarder
   belongs_to :category
@@ -15,4 +17,16 @@ class Badge < ApplicationRecord
   validates :name, presence: true
   validates :criteria, presence: true
   validates :external_id, uniqueness: true, presence: true
+
+  enum inner_colour: %i[yellow orange pink red purple teal blue blue-dark
+                        green green-dark silver gold black white], _prefix: :inner_
+  enum icon_colour: %i[yellow orange pink red purple teal blue blue-dark
+                       green green-dark silver gold black white], _prefix: :icon_
+
+  def default_values
+    self.icon = 'question' if icon.nil?
+    self.inner_colour = 0 if inner_colour.nil?
+    self.icon_colour = 0 if icon_colour.nil?
+    self.level = 1 if level.nil?
+  end
 end

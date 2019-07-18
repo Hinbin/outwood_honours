@@ -38,6 +38,6 @@ class BadgesController < ApplicationController
   end
 
   def update_badge_params
-    params.require(:badge).permit(:name)
+    params.require(:badge).permit(:name, :category_id, :awarder_id, :icon, :inner_colour, :icon_colour)
   end
 end
