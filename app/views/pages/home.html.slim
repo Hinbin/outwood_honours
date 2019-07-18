@@ -24,48 +24,15 @@ section#spotlight.page-section.portfolio.text-center
       .divider-custom-line
     /! Portfolio Grid Items
     .row
-      /! Portfolio Item 1
-      .col-md-6.col-lg-4
-        .portfolio-item.mx-auto data-target="#portfolioModal1" data-toggle="modal" 
-          .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
-            .portfolio-item-caption-content.text-center.text-white
-              i.fas.fa-plus.fa-3x
-          =image_tag('calculator.png')
-      /! Portfolio Item 2
-      .col-md-6.col-lg-4
-        .portfolio-item.mx-auto data-target="#portfolioModal2" data-toggle="modal" 
-          .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
-            .portfolio-item-caption-content.text-center.text-white
-              i.fas.fa-plus.fa-3x
-          =image_tag('chemistry.png')
-      /! Portfolio Item 3
-      .col-md-6.col-lg-4
-        .portfolio-item.mx-auto data-target="#portfolioModal3" data-toggle="modal" 
-          .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
-            .portfolio-item-caption-content.text-center.text-white
-              i.fas.fa-plus.fa-3x
-          =image_tag('france.png')
-      /! Portfolio Item 4
-      .col-md-6.col-lg-4
-        .portfolio-item.mx-auto data-target="#portfolioModal4" data-toggle="modal" 
-          .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
-            .portfolio-item-caption-content.text-center.text-white
-              i.fas.fa-plus.fa-3x
-          =image_tag('geography.png')
-      /! Portfolio Item 5
-      .col-md-6.col-lg-4
-        .portfolio-item.mx-auto data-target="#portfolioModal5" data-toggle="modal" 
-          .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
-            .portfolio-item-caption-content.text-center.text-white
-              i.fas.fa-plus.fa-3x
-          =image_tag('music.png')
-      /! Portfolio Item 6
-      .col-md-6.col-lg-4
-        .portfolio-item.mx-auto data-target="#portfolioModal6" data-toggle="modal" 
-          .portfolio-item-caption.d-flex.align-items-center.justify-content-center.h-100.w-100
-            .portfolio-item-caption-content.text-center.text-white
-              i.fas.fa-plus.fa-3x
-          =image_tag('hands.png')
+      /! Temporary - to show some badges on the front page
+      - (1..6).each do |i| 
+        - badge = Badge.new
+        - badge.id = rand(0..64)
+        - badge.category_id = i
+        - badge.name = 'AAAAAAAAAAAAA'
+        .col-md-6.col-lg-4
+          .mx-auto.py-3
+            =render partial:'shared/badge', locals: { badge: badge }
     /! /.row
 section#about.page-section.bg-primary.text-white.mb-0
   .container

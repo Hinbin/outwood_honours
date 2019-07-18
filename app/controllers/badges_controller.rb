@@ -2,7 +2,7 @@
 
 class BadgesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_badge, only: %i[show]
+  before_action :set_badge, only: %i[show update]
 
   # GET /badges
   # GET /badges.json
@@ -19,6 +19,12 @@ class BadgesController < ApplicationController
     @badge_request = BadgeRequest.where(student: current_user, badge: @badge).first
   end
 
+  def update
+    @badge.update(update_badge_params)
+    @badge.save
+    redirect_to @badge
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -29,5 +35,9 @@ class BadgesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def badge_params
     params.fetch(:badge, {})
+  end
+
+  def update_badge_params
+    params.require(:badge).permit(:name)
   end
 end

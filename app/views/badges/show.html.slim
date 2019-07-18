@@ -1,10 +1,6 @@
 .container.py-3
-    h3.display-4.text-center = @badge.name
-    .row.col.justify-content-center
-      .h2.text-center class=badge_maker(@badge)
-        .inner-circle.red
-          i(class='fa fa-bolt text-white')
-        .ribbon Initiator
+    h3.display-4.text-center#badgeName = @badge.name
+    =render partial:'shared/badge', locals: { badge: @badge }
     p.text-center.font-italic = @badge.criteria
     p.text-center = "Awarded by #{@badge.awarder.name}"
 
@@ -25,3 +21,6 @@
         = f.button :submit, class: 'btn btn-primary btn-block', wrapper_html: {class: 'form-group row'}
   
     =link_to 'Back', badges_path, class: 'btn btn-secondary btn-block my-3'
+
+    -if current_user.has_role? :badge_editor
+      =render 'edit_badge'

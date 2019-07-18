@@ -1,0 +1,8 @@
+.section.py-5#editBadgeSection 
+  h1.display-3 Edit Badge
+  =simple_form_for(@badge) do |f|
+    = f.input :name, id: 'badge_name'
+    = f.button :submit, class: 'btn btn-primary btn-block'
+  
+
+  

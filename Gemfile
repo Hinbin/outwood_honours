@@ -107,6 +107,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'pundit'
+gem 'rolify'
 
 # High Voltage for static web pages (login screen)
 gem 'high_voltage', '~> 3.1'

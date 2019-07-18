@@ -6,11 +6,7 @@
         =link_to badge do
           .card.text-dark data-role='badge' data-category=badge.category_id class=('bg-success' if badge_awarded? badge)
             .card-header.text-center
-              .h1 class=badge_maker(badge)
-                .inner-circle class=badge_colour(badge.id % 10)
-                  i class=( badge_icon(badge) )
-                - if badge.name.length < 13
-                  .ribbon =badge.name.truncate(12)
+              =render partial:'shared/badge', locals: { badge: badge }
               h4.text-center = badge.name
             .card-body
               p.text-center = badge.criteria
