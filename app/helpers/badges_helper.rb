@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 module BadgesHelper
-  def badge_maker(badge)
+  def level_shape(level)
+    level = 0 if level.nil?
+
     shapes = %w[circle-badge square-badge hex-badge]
 
-    "honours-badge #{badge_colour(badge.category_id % 10)} #{shapes[badge.id % 3]}"
+    shapes[(level % 3) - 1]
   end
 
-  def badge_colour(num)
+  def category_colour(num)
     colours = %w[blue-dark green red teal pink
                  silver orange yellow pink green-dark]
 

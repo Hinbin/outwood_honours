@@ -1,27 +1,41 @@
 .container.py-3
     h3.display-4.text-center#badgeName = @badge.name
-    h5.h5.py-2.text-center#badgeCategory =@badge.category.name
-    =render partial:'shared/badge', locals: { badge: @badge }
-    p.text-center.font-italic = @badge.criteria
+    h5.h5.py-2.text-center#badgeCategory = @badge.category.name
+    .current-badge
+      =render partial: 'shared/badge', locals: { badge: @badge }
+    p.text-center.font-italic#badgeCriteria = @badge.criteria
     p.text-center#badgeAwarder = "Awarded by #{@badge.awarder.name}"
 
     -if @badge_request.present?
       -if @badge_request.staff.present?
         p = "You have requested this badge from #{@badge_request.staff.email}."
       -else
-        p = "You have requested this badge"
+        p = 'You have requested this badge'
       p = "You gave the following comment #{@badge_request.comment}"
     -elsif @awarded_badge.present?
       p = "You were awarded this badge on #{@awarded_badge.updated_at.to_date.to_formatted_s(:long_ordinal)}."
     -else
-      =simple_form_for(BadgeRequest.new) do |f|
-        = f.input :staff_id, collection: @staff, as: :select, label: 'Awarder', input_html: { class:'col-sm-9 form-control' }, label_html: {class: 'col-sm-3 col-form-label'}, wrapper_html: {class: 'form-group row'}
-        = f.input :comment, input_html: { class:'col-sm-9 form-control' }, label_html: {class: 'col-sm-3 col-form-label'}, wrapper_html: {class: 'form-group row'}
+      =simple_form_for (BadgeRequest.new),
+        wrapper: :horizontal_form,
+        wrapper_mappings: { \
+          boolean:       :horizontal_boolean,
+          check_boxes:   :horizontal_collection,
+          date:          :horizontal_multi_select,
+          datetime:      :horizontal_multi_select,
+          file:          :horizontal_file,
+          radio_buttons: :horizontal_collection,
+          range:         :horizontal_range,
+          time:          :horizontal_multi_select } do |f|
+        = f.input :staff_id, collection: @staff, as: :select, label: 'Awarder'
+        = f.input :comment
         = f.input_field :student_id, value: current_user.id, as: :hidden
         = f.input_field :badge_id, value: @badge.id, as: :hidden
-        = f.button :submit, class: 'btn btn-primary btn-block', wrapper_html: {class: 'form-group row'}
-  
+        = f.button :submit, class: 'btn btn-primary btn-block'
+
     =link_to 'Back', badges_path, class: 'btn btn-secondary btn-block my-3'
 
     -if current_user.has_role? :badge_editor
       =render 'edit_badge'
+
+    - if @badge.errors.any?
+      p.alert.alert-error @badge.errors

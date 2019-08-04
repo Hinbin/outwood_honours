@@ -17,6 +17,7 @@ class Badge < ApplicationRecord
   validates :name, presence: true
   validates :criteria, presence: true
   validates :external_id, uniqueness: true, presence: true
+  validates :banner, length: { maximum: 11 }
 
   enum inner_colour: %i[yellow orange pink red purple teal blue blue-dark
                         green green-dark silver gold black white], _prefix: :inner_

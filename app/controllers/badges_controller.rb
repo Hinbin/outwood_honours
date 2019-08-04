@@ -22,7 +22,7 @@ class BadgesController < ApplicationController
   def update
     @badge.update(update_badge_params)
     @badge.save
-    redirect_to @badge
+    render 'show'
   end
 
   private
@@ -38,6 +38,7 @@ class BadgesController < ApplicationController
   end
 
   def update_badge_params
-    params.require(:badge).permit(:name, :category_id, :awarder_id, :icon, :inner_colour, :icon_colour)
+    params.require(:badge).permit(:name, :category_id, :awarder_id, :icon, :inner_colour,
+                                  :icon_colour, :criteria, :banner, :level)
   end
 end

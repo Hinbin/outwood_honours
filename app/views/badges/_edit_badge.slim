@@ -1,14 +1,40 @@
-.section.py-5#editBadgeSection 
-  h1.display-3 Edit Badge
-  =simple_form_for(@badge) do |f|
-    = f.input :name
-    = f.input :criteria
-    = f.association :category, label: 'Module'
-    = f.association :awarder
-    = f.input :icon
-    = f.input :inner_colour, collection: Badge.inner_colours, value_method: :first
-    = f.input :icon_colour, collection: Badge.icon_colours, value_method: :first
-    = f.button :submit, class: 'btn btn-primary btn-block'
-  
+=javascript_pack_tag('edit_badge')
+.section.py-5#editBadgeSection
 
-  
+    h1.display-3.my-3 Edit Badge
+    =simple_form_for (@badge),
+      wrapper: :horizontal_form,
+        wrapper_mappings: { \
+          boolean:       :horizontal_boolean,
+          check_boxes:   :horizontal_collection,
+          date:          :horizontal_multi_select,
+          datetime:      :horizontal_multi_select,
+          file:          :horizontal_file,
+          radio_buttons: :horizontal_collection,
+          range:         :horizontal_range,
+          time:          :horizontal_multi_select } do |f|
+      .row
+        .col
+          = f.error_notification
+          = f.input :name
+          = f.input :criteria
+          = f.association :category, label: 'Module'
+          = f.association :awarder
+      .row.align-items-center.border.border-primary.py-3
+        .col
+          p
+            | To choose a badge icon, click
+            =link_to(' here ', 'https://fontawesome.com/icons?d=gallery&m=free', target: '_blank', style: 'color: red')
+            | to find one, then type in the name of the icon you want.
+          = f.input :icon, input_html: { data: { badge: 'icon' } }
+          = f.input :inner_colour, collection: Badge.inner_colours, value_method: :first,
+           input_html: { data: { badge: 'inner_colour' } }
+          = f.input :icon_colour, collection: Badge.icon_colours, value_method: :first,
+           input_html: { data: { badge: 'icon_colour' } }
+          = f.input :banner, input_html: { maxlength: 11, data: { badge: 'banner' } }
+          = f.input :level, collection: 1..3, input_html: { data: { badge: 'level' } }
+        .col
+          .badge-preview
+            =render partial: 'shared/badge', locals: { badge: @badge }
+      .row.py-3
+        = f.button :submit, class: 'btn btn-primary btn-block'

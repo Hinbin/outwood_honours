@@ -1,6 +1,6 @@
 .text-center
-  .h1 class=badge_maker(badge)
-    .inner-circle class=badge.inner_colour
+  .h1 class="honours-badge #{category_colour(badge.category_id)} #{level_shape(badge.level)}"
+    .inner-circle#innerColour class=badge.inner_colour
       =icon('fa', badge.icon, class: "#{badge.icon_colour}-icon")
-    - if badge.name.length < 12
-      .ribbon =badge.name.truncate(12)
+    - if badge.banner.present?
+      .banner = badge.banner.truncate(11)

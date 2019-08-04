@@ -38,24 +38,38 @@
 		transform: rotate(360deg);
   }
   
-  .ribbon {
+  .banner {
     left: -0.5em !important;
   }
 }
 
+@keyframes shake {
+  60% {
+    transform: translate3d(-0.25em, 0, 0);
+  }
+  
+  80% {
+    transform: translate3d(0.25em, 0, 0);
+  }
 
+  20% {
+    transform: translate3d(-0.5em, 0, 0);
+  }
+
+  40% {
+    transform: translate3d(0.5em, 0, 0);
+  }
+}
 
 .square-badge {  
 	position: relative;
 	width: 5em;
 	height: 5em;
-	border-radius: 10px;
+	border-radius: 30% 30%;
 	display: inline-block;
 	top: 0;
-	transition: all 0.2s ease;
-
 	&:hover {
-		top: -0.25em;
+		animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
 	}
 }
 
@@ -90,7 +104,7 @@
   display: inline-block;
   margin-top: 1em;
 }
-.ribbon {
+.banner {
   position: absolute;
   padding: 0.4em;
   border-radius: 4px;		

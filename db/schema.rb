@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_081140) do
     t.integer "inner_colour"
     t.integer "level"
     t.integer "icon_colour"
+    t.string "banner"
     t.index ["awarder_id"], name: "index_badges_on_awarder_id"
     t.index ["category_id"], name: "index_badges_on_category_id"
   end

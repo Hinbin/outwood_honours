@@ -1,7 +1,7 @@
-header.masthead.bg-primary.text-white.text-center   
+header.masthead.bg-primary.text-white.text-center
   .container.d-flex.align-items-center.flex-column
     /! Masthead Image
-    =image_tag 'Outwood Honours Logo No Ribbons.png', class:'masthead-avatar mb-3'
+    =image_tag 'Outwood Honours Logo No Ribbons.png', class: 'masthead-avatar mb-3'
     /! Masthead Heading
     h1.masthead-heading.text-uppercase.mb-0 Earn it.  Own it.
     /! Icon Divider
@@ -20,12 +20,12 @@ section#spotlight.page-section.portfolio.text-center
     .divider-custom
       .divider-custom-line
       .divider-custom-icon
-        =icon('fas', 'star' )
+        =icon('fas', 'star')
       .divider-custom-line
     /! Portfolio Grid Items
     .row
       /! Temporary - to show some badges on the front page
-      - (1..6).each do |i| 
+      - (1..6).each do |i|
         - badge = Badge.new
         - badge.id = rand(0..64)
         - badge.category_id = i
