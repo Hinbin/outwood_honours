@@ -16,6 +16,7 @@ class Badge < ApplicationRecord
 
   validates :name, presence: true
   validates :criteria, presence: true
+  validates_inclusion_of :active, in: [true, false]
   validates :external_id, uniqueness: true, presence: true
   validates :banner, length: { maximum: 11 }
 
@@ -29,5 +30,6 @@ class Badge < ApplicationRecord
     self.inner_colour = 0 if inner_colour.nil?
     self.icon_colour = 0 if icon_colour.nil?
     self.level = 1 if level.nil?
+    self.active = true if active.nil?
   end
 end

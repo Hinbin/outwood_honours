@@ -1,17 +1,25 @@
 nav.navbar.navbar-expand-md.navbar-light.bg-primary#mainNav
-  .navbar-brand 
-    =link_to badges_path do 
-      =image_tag('Outwood Honours Logo No Ribbons.png', height: 75, class:'d-inline-block align-top')
-  button.navbar-toggler.navbar-toggler-right.text-uppercase.font-weight-bold.bg-white.text-dark.rounded aria-controls="navbarResponsive" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarResponsive" data-toggle="collapse" type="button" 
-    span =icon('fas', 'bars', class: 'mx-1') 
+  .navbar-brand
+    =link_to badges_path do
+      =image_tag('Outwood Honours Logo No Ribbons.png', height: 75, class: 'd-inline-block align-top')
+  button.navbar-toggler.navbar-toggler-right.bg-white.text-dark.rounded [
+    aria-controls='navbarResponsive'
+    aria-expanded='false'
+    aria-label='Toggle navigation'
+    data-target='#navbarResponsive'
+    data-toggle='collapse'
+    type='button']
+    span = icon('fas', 'bars', class: 'mx-1')
   .collapse.navbar-collapse#navbarResponsive
-    form.form-inline
-      input.form-control.my-1.mr-sm-2#badgeSearch aria-label="Search" placeholder="Search for badges" type="search"
-      =select_tag 'role', options_from_collection_for_select(Category.all, 'id', 'name'), prompt: 'Pick a module', id: ('moduleSelect'), class: 'custom-select my-1'
+    -if current_page?(badges_path) || current_page?(root_path)
+      form.form-inline
+        input.form-control.my-1.mr-sm-2#badgeSearch aria-label="Search" placeholder="Search for badges" type="search"
+        =select_tag 'role', options_from_collection_for_select(Category.all, 'id', 'name'), prompt: 'Pick a module',
+          id: 'moduleSelect', class: 'custom-select my-1'
     ul.navbar-nav.ml-auto
       li.nav-item.py-2.px-0.px-md-4.rounded = link_to 'Badges', badges_path, class: 'text-light'
       -if current_user.staff?
-        li.nav-item.py-2.px-0.px-md-4.rounded = link_to 'Badge Requests', badge_requests_path , class:'text-light'
+        li.nav-item.py-2.px-0.px-md-4.rounded = link_to 'Badge Requests', badge_requests_path, class: 'text-light'
     .navbar-text.text-white.px-0.px-md-4.rounded = "#{current_user.given_name}  #{current_user.family_name}"
     =button_to('Logout', destroy_user_session_path, class: 'btn btn-outline-light', method: :delete)
 

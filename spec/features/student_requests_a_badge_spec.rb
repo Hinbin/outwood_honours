@@ -28,9 +28,10 @@ RSpec.describe 'Student requests a badge', type: :feature, js: true do
       expect(page).to have_select('Awarder', options: [''])
     end
 
-    it 'allows me to add a comment to a badge request' do
+    it 'shows error messages' do
       visit(badge_path(badge))
-      fill_in 'Comment', with: comment
+      click_button 'Create Badge request'
+      expect(page).to have_css('li', text: "Comment can't be blank")
     end
   end
 
@@ -50,6 +51,16 @@ RSpec.describe 'Student requests a badge', type: :feature, js: true do
     it 'deals with staff members who then leave' do
       User.find(staff.id).destroy
       visit(badge_path(badge))
+    end
+
+    it 'shows the comment I have added' do
+      visit(badge_path(badge))
+      expect(page).to have_css('#comment', text: comment)
+    end
+
+    it 'allows me to remove the request' do
+      click_link 'Withdraw Badge Request'
+      expect(page).to have_content('Your badge request has been withdrawn')
     end
   end
 

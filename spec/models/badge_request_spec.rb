@@ -1,5 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe BadgeRequest, type: :model do
-  pending "LOTS of validation #{__FILE__}"
+  let(:badge_request) { create(:badge_request, student: student) }
+  let(:student) { create(:student) }
+
+  it { is_expected.to validate_presence_of(:comment) }
+
+  context 'when saving' do
+    it 'stops four or more requests for one student' do
+      create_list(:badge_request, 3, student: student)
+      expect(badge_request).not_to be_valid
+    end
+
+    it 'allows up to three badge requests per user' do
+      create_list(:badge_request, 2, student: student)
+      expect(badge_request).to be_valid
+    end
+
+    it 'staff members only for the request' do
+      expect(build(:badge_request, staff: student)).not_to be_valid
+    end
+  end
 end

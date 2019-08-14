@@ -6,16 +6,22 @@
     p.text-center.font-italic#badgeCriteria = @badge.criteria
     p.text-center#badgeAwarder = "Awarded by #{@badge.awarder.name}"
 
-    -if @badge_request.present?
+    -if @awarded_badge.present?
+      p = "You were awarded this badge on #{@awarded_badge.updated_at.to_date.to_formatted_s(:long_ordinal)}."
+    -elsif @badge_request.present? && @badge_request.persisted?
       -if @badge_request.staff.present?
         p = "You have requested this badge from #{@badge_request.staff.email}."
       -else
         p = 'You have requested this badge'
-      p = "You gave the following comment #{@badge_request.comment}"
-    -elsif @awarded_badge.present?
-      p = "You were awarded this badge on #{@awarded_badge.updated_at.to_date.to_formatted_s(:long_ordinal)}."
+      p#comment = "You said: \"#{@badge_request.comment}\""
+      =link_to 'Withdraw Badge Request', @badge_request, method: :delete, class: 'btn btn-danger btn-block my-3'
     -else
-      =simple_form_for (BadgeRequest.new),
+      -if @badge_request.errors.present?
+        ul.alert.alert-danger
+          - @badge_request.errors.full_messages.each do |error|
+            li.mx-3 = error.capitalize
+
+      =simple_form_for (@badge_request),
         wrapper: :horizontal_form,
         wrapper_mappings: { \
           boolean:       :horizontal_boolean,

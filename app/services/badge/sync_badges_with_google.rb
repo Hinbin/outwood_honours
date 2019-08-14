@@ -47,6 +47,7 @@ class Badge
           badge_requirement = Badge.unscoped.where(name: b[4]).first
           badge.badge_requirements = [badge_requirement] if badge_requirement.present?
           badge.criteria = b[5]
+          badge.active = true
           badge.save!
         end
       end

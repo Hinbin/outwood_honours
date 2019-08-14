@@ -3,23 +3,25 @@
 class BadgesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_badge, only: %i[show update]
+  before_action :set_badge_request, only: %i[show update]
 
   # GET /badges
   # GET /badges.json
   def index
-    @badges = Badge.includes(:category).all
     @awarded_badges = AwardedBadge.where(user: current_user).pluck(:badge_id)
+    @badges = policy_scope(Badge).includes(:category).where.not(id: @awarded_badges)
   end
 
   # GET /badges/1
   # GET /badges/1.json
   def show
+    authorize @badge
     @staff = User.where(role: 'staff', school: current_user.school)
     @awarded_badge = AwardedBadge.where(user: current_user, badge: @badge).first
-    @badge_request = BadgeRequest.where(student: current_user, badge: @badge).first
   end
 
   def update
+    authorize @badge
     @badge.update(update_badge_params)
     @badge.save
     render 'show'
@@ -32,13 +34,22 @@ class BadgesController < ApplicationController
     @badge = Badge.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def badge_params
-    params.fetch(:badge, {})
+    params.permit(:staff_id, :comment)
   end
 
   def update_badge_params
     params.require(:badge).permit(:name, :category_id, :awarder_id, :icon, :inner_colour,
                                   :icon_colour, :criteria, :banner, :level)
+  end
+
+  def set_badge_request
+    @badge_request = BadgeRequest.where(student: current_user, badge: @badge).first_or_initialize
+    return if @badge_request.persisted?
+
+    return unless badge_params.present?
+
+    @badge_request.assign_attributes(badge_params)
+    @badge_request.valid?
   end
 end

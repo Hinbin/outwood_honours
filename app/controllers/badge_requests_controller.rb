@@ -2,25 +2,36 @@
 
 class BadgeRequestsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_badge_request, only: %i[show, update]
+  before_action :set_badge_request, only: %i[show update destroy]
 
   def create
     badge_request = BadgeRequest.create(badge_request_params)
     badge_request.status = 'pending'
+    authorize badge_request
+
     badge_request.save
-    redirect_to badge_request.badge
+    redirect_to badge_path(badge_request.badge, badge_request_params.to_h)
   end
 
-  # GET /badges
-  # GET /badges.json
   def index
-    @badge_requests = BadgeRequest.where(staff_id: current_user.id, status: 'pending')
+    @badge_requests = policy_scope(BadgeRequest).where(status: 'pending')
   end
 
   def update
     @badge_request.status = badge_update_params
+    authorize @badge_request
+
     BadgeRequest::AwardBadge.new(@badge_request).call if @badge_request.status == 'approved'
     @badge_request.save! if @badge_request.status == 'denied'
+  end
+
+  def destroy
+    authorize @badge_request
+
+    badge = @badge_request.badge
+    @badge_request.destroy
+    flash[:alert] = 'Your badge request has been withdrawn'
+    redirect_to badge
   end
 
   private

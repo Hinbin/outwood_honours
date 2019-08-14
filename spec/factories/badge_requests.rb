@@ -3,5 +3,6 @@ FactoryBot.define do
     student { create(:user) }
     staff { create(:staff, school: student.school) }
     comment { FFaker::HipsterIpsum.sentence }
+    badge
   end
 end

@@ -10,6 +10,7 @@ RSpec.describe 'badges/show', type: :view do
   before do
     @badge = badge
     @staff = teachers
+    @badge_request = BadgeRequest.new
   end
 
   context 'when requesting a badge' do
