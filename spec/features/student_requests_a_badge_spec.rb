@@ -78,9 +78,8 @@ RSpec.describe 'Student requests a badge', type: :feature, js: true do
 
     it 'shows the comment I made' do
       visit(badge_path(badge))
-      expect(page).to have_content("You were awarded this badge on #{awarded_badge.updated_at.to_date.to_formatted_s(:long_ordinal)}")
+      expect(page).to have_content(awarded_badge.user_comment)
     end
-
 
     it 'shows the comment the awarder made'
   end

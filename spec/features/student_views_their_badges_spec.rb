@@ -7,7 +7,7 @@ RSpec.describe 'Student views badges available', type: :feature, js: true do
     sign_in student
   end
 
-  it 'shows badges that I have been awarded', :focus do
+  it 'shows badges that I have been awarded' do
     visit(awarded_badges_path)
     expect(page).to have_css('.card', count: 1)
   end
