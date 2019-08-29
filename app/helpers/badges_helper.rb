@@ -16,7 +16,7 @@ module BadgesHelper
     colours[num % 10]
   end
 
-  def badge_awarded?(badge)
-    @awarded_badges.present? && (@awarded_badges.include? badge.id)
+  def badge_requested?(badge)
+    @badge_requests.present? && (@badge_requests.include? badge.id)
   end
 end

@@ -1,7 +1,7 @@
 class BadgeRequestPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(staff_id: @user.id)
+      scope.where(staff_id: @user.id).or(scope.where(student_id: @user.id))
     end
   end
 

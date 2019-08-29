@@ -2,6 +2,8 @@ RSpec.describe 'Student views badges available', type: :feature, js: true do
   let(:badges) { create_list(:badge, 10) }
   let(:disabled_badge) { create(:badge, active: false) }
   let(:student) { create(:student) }
+  let(:badge) { create(:badge) }
+  let(:badge_request) { create(:badge_request, badge: badge, student: student) }
 
   before do
     badges
@@ -26,6 +28,8 @@ RSpec.describe 'Student views badges available', type: :feature, js: true do
   end
 
   it 'shows which badges I have a request in for' do
-    
+    badge_request
+    visit(badges_path)
+    expect(page).to have_css('.card-header .requested')
   end
 end
