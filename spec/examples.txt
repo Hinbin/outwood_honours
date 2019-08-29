@@ -27,12 +27,17 @@ example_id                                                     | status  | run_t
 ./spec/features/student_requests_a_badge_spec.rb[1:2:3]        | passed  | 1.08 seconds    |
 ./spec/features/student_requests_a_badge_spec.rb[1:2:4]        | passed  | 1.09 seconds    |
 ./spec/features/student_requests_a_badge_spec.rb[1:3:1]        | passed  | 0.36645 seconds |
+./spec/features/student_requests_a_badge_spec.rb[1:3:2]        | unknown |                 |
+./spec/features/student_requests_a_badge_spec.rb[1:3:3]        | unknown |                 |
 ./spec/features/student_searches_for_badges_spec.rb[1:1:1]     | passed  | 0.6164 seconds  |
 ./spec/features/student_searches_for_badges_spec.rb[1:1:2]     | passed  | 0.82975 seconds |
 ./spec/features/student_views_badges_available_spec.rb[1:1]    | passed  | 0.56985 seconds |
 ./spec/features/student_views_badges_available_spec.rb[1:2]    | passed  | 3.57 seconds    |
 ./spec/features/student_views_badges_available_spec.rb[1:3]    | passed  | 0.56309 seconds |
 ./spec/features/student_views_badges_available_spec.rb[1:4]    | passed  | 3.74 seconds    |
+./spec/features/student_views_their_badges_spec.rb[1:1]        | passed  | 3.11 seconds    |
+./spec/features/student_views_their_badges_spec.rb[1:2]        | unknown |                 |
+./spec/helpers/awarded_badges_helper_spec.rb[1:1]              | unknown |                 |
 ./spec/helpers/badges_helper_spec.rb[1:1]                      | pending | 0.00001 seconds |
 ./spec/mailers/badge_request_mailer_spec.rb[1:1]               | pending | 0.00003 seconds |
 ./spec/mailers/badge_request_mailer_spec.rb[1:2]               | pending | 0.00003 seconds |

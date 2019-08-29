@@ -18,6 +18,8 @@ nav.navbar.navbar-expand-md.navbar-light.bg-primary#mainNav
           id: 'moduleSelect', class: 'custom-select my-1'
     ul.navbar-nav.ml-auto
       li.nav-item.py-2.px-0.px-md-4.rounded = link_to 'Badges', badges_path, class: 'text-light'
+      -if current_user.student?
+        li.nav-item.py-2.px-0.px-md-4.rounded = link_to 'My Badges', awarded_badges_path, class: 'text-light'
       -if current_user.staff?
         li.nav-item.py-2.px-0.px-md-4.rounded = link_to 'Badge Requests', badge_requests_path, class: 'text-light'
     .navbar-text.text-white.px-0.px-md-4.rounded = "#{current_user.given_name}  #{current_user.family_name}"

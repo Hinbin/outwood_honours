@@ -8,7 +8,7 @@ class BadgesController < ApplicationController
   # GET /badges
   # GET /badges.json
   def index
-    @awarded_badges = AwardedBadge.where(user: current_user).pluck(:badge_id)
+    @awarded_badges = policy_scope(AwardedBadge).pluck(:badge_id)
     @badge_requests = policy_scope(BadgeRequest).where(status: 'pending').pluck(:badge_id)
     @badges = policy_scope(Badge).includes(:category).where.not(id: @awarded_badges)
   end
