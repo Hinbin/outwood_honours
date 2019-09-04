@@ -4,7 +4,10 @@ RSpec.describe 'Student views badges available', type: :feature, js: true do
   let(:student) { create(:student) }
   let(:badge) { create(:badge) }
   let(:badge_request) { create(:badge_request, badge: badge, student: student) }
-  let(:badge_request_denied) { create(:badge_request, badge: badge, student: student, status: 'denied') }
+  let(:badge_request_denied) do
+    create(:badge_request, badge: badge, student: student,
+                           status: 'denied', awarder_comment: FFaker::Lorem.word)
+  end
 
   before do
     badges

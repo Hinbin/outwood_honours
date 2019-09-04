@@ -17,7 +17,7 @@ RSpec.describe 'badges/index', type: :view do
   end
 
   it 'shows all badges currently avaiable' do
-    expect(rendered).to match(badge_one.name)
+    expect(rendered).to have_content(badge_one.name)
   end
 
   it 'shows badges' do

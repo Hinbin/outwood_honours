@@ -23,7 +23,10 @@ class BadgeRequestsController < ApplicationController
     @badge_request.update(badge_update_params)
 
     BadgeRequest::AwardBadge.new(@badge_request).call if @badge_request.status == 'approved'
-    @badge_request.save! if @badge_request.status == 'denied'
+
+    return unless @badge_request.status == 'denied'
+
+    render json: @badge_request.errors, status: :unprocessable_entity unless @badge_request.save
   end
 
   def destroy

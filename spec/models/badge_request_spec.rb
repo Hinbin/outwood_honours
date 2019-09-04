@@ -9,7 +9,7 @@ RSpec.describe BadgeRequest, type: :model do
   context 'when saving' do
     it 'stops four or more requests for one student' do
       create_list(:badge_request, 3, student: student)
-      expect(badge_request).not_to be_valid
+      expect{badge_request}.to raise_error(ActiveRecord::RecordInvalid)
     end
 
     it 'allows up to three badge requests per user' do
@@ -21,7 +21,7 @@ RSpec.describe BadgeRequest, type: :model do
       expect(build(:badge_request, staff: student)).not_to be_valid
     end
 
-    it 'does not allow a badge to be denied without a comment', :focus do
+    it 'does not allow a badge to be denied without a comment' do
       expect(build(:badge_request, status: 'denied', awarder_comment: nil)).not_to be_valid
     end
 

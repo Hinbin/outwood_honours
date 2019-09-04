@@ -41,7 +41,7 @@ RSpec.describe 'Staff deals with badge requests', type: :feature, js: true do
     end
   end
 
-  context 'when denying a badge request', :focus do
+  context 'when denying a badge request' do
     it 'allows the awarder to deny a request' do
       visit(badge_requests_path)
       find('.awarder-comment').fill_in with: comment
@@ -51,9 +51,9 @@ RSpec.describe 'Staff deals with badge requests', type: :feature, js: true do
 
     it 'only allows me to deny a request with a comment' do
       visit(badge_requests_path)
-      find('.awarder-comment').fill_in with: comment
       click_button 'Deny'
-      expect(page).to have_content('You must provide a comment when denying a request')
+
+      expect(page).to have_content('you must add a comment if this request will be denied')
     end
 
     context 'when seeing the result as a student' do
@@ -71,9 +71,9 @@ RSpec.describe 'Staff deals with badge requests', type: :feature, js: true do
       end
 
       it 'allows the student to withdraw and re-request the badge' do
-        visit(badge_path(badge_request.badge))
-        click_button 'Withdraw Badge Request'
-        expect(page).to have_button('Create Badge Request')
+        visit( badge_path(badge_request.badge) )
+        click_link 'Withdraw Badge Request'
+        expect(page).to have_button('Create Badge request')
       end
     end
   end
