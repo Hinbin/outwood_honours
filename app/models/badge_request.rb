@@ -1,5 +1,5 @@
 class BadgeRequest < ApplicationRecord
-  validate :check_max_requests
+  validate :check_max_requests, on: :create
   validate :check_staff_member
 
   belongs_to :student, class_name: 'User', foreign_key: 'student_id'
@@ -15,7 +15,7 @@ class BadgeRequest < ApplicationRecord
   private
 
   def check_max_requests
-    return unless BadgeRequest.where(student: student, status: 'pending').count > 3
+    return unless BadgeRequest.where(student: student, status: 'pending').count >= 3
 
     errors.add(:base, 'you are allowed a maximum of three open badge requests')
   end

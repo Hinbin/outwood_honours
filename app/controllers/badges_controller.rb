@@ -9,8 +9,11 @@ class BadgesController < ApplicationController
   # GET /badges.json
   def index
     @awarded_badges = policy_scope(AwardedBadge).pluck(:badge_id)
-    @badge_requests = policy_scope(BadgeRequest).where(status: 'pending').pluck(:badge_id)
-    @badges = policy_scope(Badge).includes(:category).where.not(id: @awarded_badges)
+
+    @badge_requests = policy_scope(BadgeRequest).where(student: current_user).pluck(:badge_id, :status)
+
+    @badges = policy_scope(Badge).left_outer_joins(:badge_requests)
+                                 .where('badge_requests.student_id is null', current_user.id)
   end
 
   # GET /badges/1

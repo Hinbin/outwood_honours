@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', () => {
+
   $('#badgeSearch').off('keyup')
   $('#moduleSelect').off('change')
 
@@ -8,8 +9,6 @@ $(document).on('turbolinks:load', () => {
   $('#moduleSelect').on('change', function () {
     searchBadges()
   })
-
-
 
 })
 
@@ -38,3 +37,13 @@ function searchBadges() {
   })
 }
 
+if (!Turbolinks) {
+  location.reload();
+}
+
+Turbolinks.dispatch("turbolinks:load");
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init()

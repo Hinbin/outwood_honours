@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2019_08_29_150714) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "awarder_comment"
     t.index ["badge_id", "student_id"], name: "index_badge_requests_on_badge_id_and_student_id", unique: true
     t.index ["badge_id"], name: "index_badge_requests_on_badge_id"
     t.index ["student_id", "badge_id"], name: "index_badge_requests_on_student_id_and_badge_id", unique: true

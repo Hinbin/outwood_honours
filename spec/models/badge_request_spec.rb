@@ -20,5 +20,11 @@ RSpec.describe BadgeRequest, type: :model do
     it 'staff members only for the request' do
       expect(build(:badge_request, staff: student)).not_to be_valid
     end
+
+    it 'does not allow a badge to be denied without a comment', :focus do
+      expect(build(:badge_request, status: 'denied', awarder_comment: nil)).not_to be_valid
+    end
+
+    it 'checks the badges prerequisites'
   end
 end

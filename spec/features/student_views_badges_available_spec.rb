@@ -4,6 +4,7 @@ RSpec.describe 'Student views badges available', type: :feature, js: true do
   let(:student) { create(:student) }
   let(:badge) { create(:badge) }
   let(:badge_request) { create(:badge_request, badge: badge, student: student) }
+  let(:badge_request_denied) { create(:badge_request, badge: badge, student: student, status: 'denied') }
 
   before do
     badges
@@ -31,5 +32,11 @@ RSpec.describe 'Student views badges available', type: :feature, js: true do
     badge_request
     visit(badges_path)
     expect(page).to have_css('.card-header .requested')
+  end
+
+  it 'shows which badge have been denied' do
+    badge_request_denied
+    visit(badges_path)
+    expect(page).to have_css('.card-header .denied')
   end
 end

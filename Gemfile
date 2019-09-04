@@ -63,6 +63,8 @@ group :development do
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rspec'
+
+  gem 'bullet'
 end
 
 group :test do

@@ -1,18 +1,25 @@
 =javascript_pack_tag('badge_request')
-.container
-  table.table#badgeTable
-    thead.thead-dark
-      th scope='col' Name
-      th scope='col'Badge
-      th scope='col'Comment  
-      th.mx-2 scope='col'
-      th.mx-2 scope='col'
-    tbody    
-      -@badge_requests.each do |br|
-        tr
-          td scope='row' #{br.student.given_name} #{br.student.family_name}
-          td=br.badge.name
-          td=br.comment
-          td=button_to 'Approve', br, class: 'btn btn-success', data: {id: br.id}, remote: true, method: :patch, params: { status: 'approved' } 
-          td=button_to 'Deny', br, class: 'btn btn-danger', data: {id: br.id}, remote: true, method: :patch, params: { status: 'denied'}
-s
+.container.py-3
+  .table-responsive-lg
+    table.table#badgeTable
+      thead.thead-dark scope="row"
+        th scope="col" Name
+        th scope="col" Badge
+        th scope="col" Criteria
+        th scope="col" Comment
+        th scope="col" Your Comment
+        th.mx-2 scope="col"
+        th.mx-2 scope="col"
+      tbody
+        -@badge_requests.each do |br|
+            tr
+              td scope="row" #{br.student.given_name} #{br.student.family_name}
+              td = br.badge.name
+              td = br.badge.criteria
+              td = br.comment
+              td
+                input.awarder-comment data-id=br.id
+              td.approved-cell data-id=br.id
+                input type='button' class='btn btn-request btn-success' data={ id: br.id, status: 'approved' } value='Approve'
+              td
+                input type='button' class='btn btn-request btn-danger' data={ id: br.id, status: 'denied' } value='Deny'

@@ -14,12 +14,13 @@ class BadgeRequestsController < ApplicationController
   end
 
   def index
-    @badge_requests = policy_scope(BadgeRequest).where(status: 'pending')
+    redirect_to root_path unless current_user.staff?
+    @badge_requests = policy_scope(BadgeRequest).includes(:badge, :student).where(status: 'pending')
   end
 
   def update
-    @badge_request.status = badge_update_params
     authorize @badge_request
+    @badge_request.update(badge_update_params)
 
     BadgeRequest::AwardBadge.new(@badge_request).call if @badge_request.status == 'approved'
     @badge_request.save! if @badge_request.status == 'denied'
@@ -47,6 +48,6 @@ class BadgeRequestsController < ApplicationController
   end
 
   def badge_update_params
-    params.require(:status)
+    params.require(:badge_request).permit(:status, :awarder_comment)
   end
 end

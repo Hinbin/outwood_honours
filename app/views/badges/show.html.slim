@@ -9,12 +9,19 @@
     -if @awarded_badge.present?
       p = "You were awarded this badge on #{@awarded_badge.updated_at.to_date.to_formatted_s(:long_ordinal)}."
       p#comment = "You said: \"#{@awarded_badge.user_comment}\""
+      p#awarder-comment = "The awarder said: \"#{@awarded_badge.awarder_comment}\""
     -elsif @badge_request.present? && @badge_request.persisted?
       -if @badge_request.staff.present?
         p = "You have requested this badge from #{@badge_request.staff.email}."
       -else
         p = 'You have requested this badge'
       p#comment = "You said: \"#{@badge_request.comment}\""
+      -if @badge_request.status == 'denied'
+        .alert-danger.p-2
+          p = 'The awarder has denied the request with the following comment:'
+          p.text-center
+            strong = @badge_request.awarder_comment
+        p = 'Click the "Withdraw Badge Request" button below, and re-request this badge when you are ready'
       =link_to 'Withdraw Badge Request', @badge_request, method: :delete, class: 'btn btn-danger btn-block my-3'
     -else
       -if @badge_request.errors.present?

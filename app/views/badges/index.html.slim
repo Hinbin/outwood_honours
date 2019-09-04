@@ -1,5 +1,11 @@
-=javascript_pack_tag('badges')
 .container.py-3
   .col
-    .card-columns
-      =render partial: 'shared/badge_card', collection: @badges.shuffle, as: :badge
+    -if @badge_requests
+      h1.h1 Requested Badges:
+      .card-columns
+        =render partial: 'shared/badge_card', collection: Badge.where(id: @badge_requests.transpose[0]), as: :badge
+      h1.h1 Available Badges:
+      .card-columns
+        =render partial: 'shared/badge_card', collection: @badges.shuffle, as: :badge
+
+= javascript_pack_tag('badges')

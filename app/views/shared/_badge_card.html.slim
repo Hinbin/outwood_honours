@@ -1,9 +1,12 @@
 =link_to badge do
-  .card.text-dark data-role='badge' data-category=badge.category_id
+  .card.text-dark data-role='badge' data-category=badge.category_id data-aos="flip-right"
     .card-header.text-center
       - if badge_requested? badge
         .requested
           span Requested
+      - elsif badge_denied? badge
+        .denied
+          span Denied
       .text-center
         .h1 class="honours-badge #{category_colour(badge.category_id)} #{level_shape(badge.level)}"
           .inner-circle#innerColour class=badge.inner_colour

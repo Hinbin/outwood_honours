@@ -33,3 +33,9 @@ const addBadgeListener = (event) => {
     $('.badge-preview div.honours-badge').addClass(badgeClass)
   }
 }
+
+if (!Turbolinks) {
+  location.reload();
+}
+
+Turbolinks.dispatch("turbolinks:load");

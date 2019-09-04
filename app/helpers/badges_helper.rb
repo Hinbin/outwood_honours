@@ -17,6 +17,14 @@ module BadgesHelper
   end
 
   def badge_requested?(badge)
-    @badge_requests.present? && (@badge_requests.include? badge.id)
+    return false unless @badge_requests.present?
+
+    @badge_requests.select { |s| s[0] == badge.id && s[1] == 'pending' }.present?
+  end
+
+  def badge_denied?(badge)
+    return false unless @badge_requests.present?
+
+    @badge_requests.select { |s| s[0] == badge.id && s[1] == 'denied' }.present?
   end
 end

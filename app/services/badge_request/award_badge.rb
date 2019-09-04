@@ -14,7 +14,8 @@ class BadgeRequest
     private
 
     def award_student_with_badge
-      AwardedBadge.create(user: @student, badge: @badge, user_comment: @badge_request.comment)
+      AwardedBadge.create(user: @student, badge: @badge, user_comment: @badge_request.comment,
+                          awarder_comment: @badge_request.awarder_comment)
     end
 
     def remove_badge_request
