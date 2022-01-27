@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.describe 'Badge editor edits a badge', type: :feature, js: true do
   let(:badge_editor) { create(:badge_editor) }
   let(:badge) { create(:badge) }
