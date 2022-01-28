@@ -22,6 +22,8 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
+gem "omniauth-rails_csrf_protection"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -99,7 +101,6 @@ gem 'slim'
 # Pretty things!
 # Bootstrap and JQuery for Bootstrap!
 gem 'font-awesome-sass'
-gem 'sassc-rails'
 
 # Required for rails 6.1 (recommeneded 1.2)
 gem 'image_processing'

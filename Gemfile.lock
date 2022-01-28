@@ -212,7 +212,7 @@ GEM
     hashie (5.0.0)
     high_voltage (3.1.2)
     httpclient (2.8.3)
-    i18n (1.9.0)
+    i18n (1.9.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
       mini_magick (>= 4.9.5, < 5)
@@ -266,6 +266,9 @@ GEM
     omniauth-oauth2 (1.7.2)
       oauth2 (~> 1.4)
       omniauth (>= 1.9, < 3)
+    omniauth-rails_csrf_protection (1.0.0)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     orm_adapter (0.5.0)
     os (1.1.4)
     parallel (1.21.0)
@@ -378,12 +381,6 @@ GEM
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -461,7 +458,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.5.3)
+    zeitwerk (2.5.4)
 
 PLATFORMS
   ruby
@@ -488,6 +485,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   omniauth
   omniauth-google-oauth2
+  omniauth-rails_csrf_protection
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 3.11)
@@ -501,7 +499,6 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rspec
   sassc
-  sassc-rails
   selenium-webdriver
   shoulda-matchers
   simple_form

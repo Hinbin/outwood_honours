@@ -7,4 +7,4 @@ nav.navbar.navbar-expand-md.navbar-light#mainNav
       li.nav-item.py-3.px-0.px-md-4.rounded = link_to 'Badge Spotlight', '#spotlight' , class:'text-dark'
       li.nav-item.py-3.px-0.px-md-4.rounded = link_to 'About', '#about' , class:'text-dark'
 
-    =button_to 'Login', user_google_oauth2_omniauth_authorize_path, class: 'btn btn-block btn-primary'
+    =button_to 'Login', user_google_oauth2_omniauth_authorize_path, class: 'btn btn-block btn-primary', method: :post
